@@ -38,10 +38,10 @@ public class Main {
 
         ApplicationContext context=new ClassPathXmlApplicationContext("file:web/WEB-INF/applicationContext.xml");
         UserDAO userDAO=(UserDAO) context.getBean("userDAOImpl") ;
-        User user1=new User("Полесьежилстрой","г. Брест, ул. Кижеватова, д. 60","80162456987", "asasas");
-        userDAO.saveUser(user1);
+//        User user1=new User(login, password, "Полесьежилстрой","г. Брест, ул. Кижеватова, д. 60","80162456987", "asasas");
+//        userDAO.saveUser(user1);
 
-        System.out.println(userDAO.findById(1));
+//        System.out.println(userDAO.findUserById(1));
 
 
     }

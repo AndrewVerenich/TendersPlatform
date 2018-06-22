@@ -1,13 +1,27 @@
 package by.andver.objects;
 
+
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
+
+@Entity
+@Table(name = "projects")
 public class Project {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private String name;
+    @ManyToOne(targetEntity = User.class)
     private User customer;
+    @Column(nullable = false)
     private Integer firstPrice;
+    @Column(nullable = false)
     private Integer complexityClass;
+    @Column(nullable = false)
     private Date endDate;
 
     public Project() {
@@ -74,7 +88,7 @@ public class Project {
         return "Project{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", customer=" + customer +
+//                ", customer=" + customer +
                 ", firstPrice=" + firstPrice +
                 ", complexityClass=" + complexityClass +
                 ", endDate=" + endDate +

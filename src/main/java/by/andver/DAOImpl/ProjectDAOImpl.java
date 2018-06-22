@@ -1,7 +1,7 @@
 package by.andver.DAOImpl;
 
-import by.andver.interfaces.UserDAO;
-import by.andver.objects.User;
+import by.andver.interfaces.ProjectDAO;
+import by.andver.objects.Project;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +11,11 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public class UserDAOImpl implements UserDAO {
-
+public class ProjectDAOImpl implements ProjectDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public UserDAOImpl() {
+    public ProjectDAOImpl() {
     }
 
     public Session currentSession(){
@@ -31,15 +30,15 @@ public class UserDAOImpl implements UserDAO {
         this.sessionFactory = sessionFactory;
     }
 
-    public void saveUser(User user) {
-        currentSession().saveOrUpdate(user);
+    public void saveProject(Project project) {
+        currentSession().persist(project);
     }
 
-    public User findUserById(Integer id) {
-        return currentSession().get(User.class,id);
+    public Project findProjectById(Integer id) {
+        return currentSession().get(Project.class,id);
     }
 
-    public void deleteUser(User user) {
-        currentSession().delete(user);
+    public void deleteProject(Project project) {
+        currentSession().remove(project);
     }
 }

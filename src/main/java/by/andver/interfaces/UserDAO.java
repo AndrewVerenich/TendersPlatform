@@ -4,6 +4,7 @@ import by.andver.objects.User;
 
 public interface UserDAO {
     void saveUser (User user);
-    User findById(Integer id);
+    User findUserById(Integer id);
+    void deleteUser (User user);
 
 }
