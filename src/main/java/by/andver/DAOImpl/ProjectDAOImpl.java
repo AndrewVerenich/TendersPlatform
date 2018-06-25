@@ -31,7 +31,7 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     public void saveProject(Project project) {
-        currentSession().persist(project);
+        currentSession().save(project);
     }
 
     public Project findProjectById(Integer id) {
@@ -39,6 +39,10 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     public void deleteProject(Project project) {
-        currentSession().remove(project);
+        currentSession().delete(project);
+    }
+
+    public void updateProject(Project project) {
+        currentSession().update(project);
     }
 }

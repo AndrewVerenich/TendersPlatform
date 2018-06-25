@@ -1,18 +1,27 @@
 package by.andver.objects;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name="participants")
 public class Participant {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToOne(targetEntity = User.class)
     private User user;
+    @ManyToOne(targetEntity = Tender.class)
     private Tender tender;
+    @Column(nullable = false)
     private Integer bet;
+    @ManyToOne(targetEntity = Tender.class)
+    private List<Tender> tenderList;
+    @OneToOne(targetEntity = Tender.class)
+    private List<Tender> winnTenderList;
+
 
     public Participant() {
-    }
-
-    public Participant(User user, Tender tender, Integer bet) {
-        this.user = user;
-        this.tender = tender;
-        this.bet = bet;
     }
 
     public Integer getId() {
@@ -47,12 +56,19 @@ public class Participant {
         this.bet = bet;
     }
 
-    @Override
-    public String toString() {
-        return "Participant{" +
-                "id=" + id +
-                ", user=" + user +
-                ", bet=" + bet +
-                '}';
+    public List<Tender> getTenderList() {
+        return tenderList;
+    }
+
+    public void setTenderList(List<Tender> tenderList) {
+        this.tenderList = tenderList;
+    }
+
+    public List<Tender> getWinnTenderList() {
+        return winnTenderList;
+    }
+
+    public void setWinnTenderList(List<Tender> winnTenderList) {
+        this.winnTenderList = winnTenderList;
     }
 }

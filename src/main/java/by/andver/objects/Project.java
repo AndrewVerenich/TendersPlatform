@@ -1,6 +1,5 @@
 package by.andver.objects;
 
-
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -23,16 +22,10 @@ public class Project {
     private Integer complexityClass;
     @Column(nullable = false)
     private Date endDate;
+    @OneToOne(targetEntity = Tender.class)
+    private Tender tender;
 
     public Project() {
-    }
-
-    public Project(String name, User customer, Integer firstPrice, Integer complexityClass, Date endDate) {
-        this.name = name;
-        this.customer = customer;
-        this.firstPrice = firstPrice;
-        this.complexityClass = complexityClass;
-        this.endDate = endDate;
     }
 
     public Integer getId() {
@@ -83,15 +76,11 @@ public class Project {
         this.endDate = endDate;
     }
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-//                ", customer=" + customer +
-                ", firstPrice=" + firstPrice +
-                ", complexityClass=" + complexityClass +
-                ", endDate=" + endDate +
-                '}';
+    public Tender getTender() {
+        return tender;
+    }
+
+    public void setTender(Tender tender) {
+        this.tender = tender;
     }
 }

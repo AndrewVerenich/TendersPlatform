@@ -1,25 +1,35 @@
 package by.andver.objects;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-
+@Entity
+@Table(name = "tenders")
 public class Tender {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @OneToOne
+    @JoinTable(name = "tender_project",
+            joinColumns = @JoinColumn(name = "tender_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id"))
     private Project project;
+    @ManyToMany
+    @JoinTable(name = "tender_participant",
+            joinColumns = @JoinColumn(name = "tender_id"),
+            inverseJoinColumns = @JoinColumn(name = "participant_id"))
     private List<Participant> participantList;
+    @Column(nullable = false)
     private Date dateEndOfTender;
+    @Column(nullable = false)
     private Boolean active;
-    private User winner;
+    @OneToOne
+    @JoinTable(name = "tender_winner",
+            joinColumns = @JoinColumn(name = "tender_id"),
+            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+    private Participant winner;
 
     public Tender() {
-    }
-
-    public Tender(Project project, List<Participant> participantList, Date dateEndOfTender, Boolean active, User winner) {
-        this.project = project;
-        this.participantList = participantList;
-        this.dateEndOfTender = dateEndOfTender;
-        this.active = active;
-        this.winner = winner;
     }
 
     public Integer getId() {
@@ -62,22 +72,11 @@ public class Tender {
         this.active = active;
     }
 
-    public User getWinner() {
+    public Participant getWinner() {
         return winner;
     }
 
-    public void setWinner(User winner) {
+    public void setWinner(Participant winner) {
         this.winner = winner;
-    }
-
-    @Override
-    public String toString() {
-        return "Tender{" +
-                "id=" + id +
-                ", project=" + project +
-                ", participantList=" + participantList +
-                ", dateEndOfTender=" + dateEndOfTender +
-                ", active=" + active +
-                '}';
     }
 }

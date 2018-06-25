@@ -42,4 +42,8 @@ public class UserDAOImpl implements UserDAO {
     public void deleteUser(User user) {
         currentSession().delete(user);
     }
+
+    public void updateUser(User user) {
+        currentSession().update(user);
+    }
 }

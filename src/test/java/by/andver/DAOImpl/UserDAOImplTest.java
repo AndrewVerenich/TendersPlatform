@@ -33,8 +33,8 @@ public class UserDAOImplTest {
 
     @Before
     public void init(){
-        user = new User("user", "password", "Полесьежилстрой", "г. Брест, ул. Кижеватова, д. 60", "80162456987", "asasas", null);
-        project=new Project("Детский сад на 350 мест в г. Брест",null,1000,3,new Date());
+//        user = new User("user", "password", "Полесьежилстрой", "г. Брест, ул. Кижеватова, д. 60", "80162456987", "asasas", new LinkedList<Project>());
+//        project=new Project("Детский сад на 350 мест в г. Брест",null,1000,3,new Date());
     }
 
     @Test
@@ -46,16 +46,14 @@ public class UserDAOImplTest {
     }
     @Test
     public void shouldSaveUsersProject(){
-//        userDAO.saveUser(user);
         project.setCustomer(user);
-//        projectDAO.saveProject(project);
-        List<Project> list=new LinkedList<Project>();
-        list.add(project);
-        user.setProjectList(list);
+        user.getProjectList().add(project);
         userDAO.saveUser(user);
         Integer id=user.getId();
         assertNotNull(userDAO.findUserById(id).getProjectList().get(0));
 
-//        projectDAO.deleteProject(project);
+
+        user.getProjectList().remove(project);
+        userDAO.updateUser(user);
     }
 }

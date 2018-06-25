@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tenders_db@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="tenders_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="book_service"/>
+    <schema id="4" parent="1" name="data"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="library_db"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="new_schema"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sakila"/>
+    <schema id="11" parent="1" name="scheme"/>
+    <schema id="12" parent="1" name="sys"/>
+    <schema id="13" parent="1" name="university"/>
+    <schema id="14" parent="1" name="ver"/>
+    <schema id="15" parent="1" name="world"/>
+    <table id="16" parent="2" name="participants"/>
+    <table id="17" parent="2" name="projects"/>
+    <table id="18" parent="2" name="tender_participant"/>
+    <table id="19" parent="2" name="tender_project"/>
+    <table id="20" parent="2" name="tender_winner"/>
+    <table id="21" parent="2" name="tenders"/>
+    <table id="22" parent="2" name="user_participant"/>
+    <table id="23" parent="2" name="user_project"/>
+    <table id="24" parent="2" name="users"/>
+    <table id="25" parent="2" name="users_projects"/>
+    <column id="26" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="16" name="bet">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="16" name="tender_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="29" parent="16" name="tenderList_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="16" name="user_id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="16" name="winnTenderList_id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="32" parent="16" name="FK5rmy47vaaqxmxjsvhw15jtmjm">
+      <ColNames>tenderList_id</ColNames>
+    </index>
+    <index id="33" parent="16" name="FK61nb4n11pivxkyqlhmxqt6c3n">
+      <ColNames>tender_id</ColNames>
+    </index>
+    <index id="34" parent="16" name="FKfv6rcdfjuru8wgcpunin6sv37">
+      <ColNames>winnTenderList_id</ColNames>
+    </index>
+    <index id="35" parent="16" name="FKghixrahoj1s8cloinfx8lyeqa">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="36" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="16" name="FK61nb4n11pivxkyqlhmxqt6c3n">
+      <ColNames>tender_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>tenders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="16" name="FK5rmy47vaaqxmxjsvhw15jtmjm">
+      <ColNames>tenderList_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>tenders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="39" parent="16" name="FKghixrahoj1s8cloinfx8lyeqa">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="40" parent="16" name="FKfv6rcdfjuru8wgcpunin6sv37">
+      <ColNames>winnTenderList_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>tenders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="41" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="17" name="complexityClass">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="17" name="endDate">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="17" name="firstPrice">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="17" name="name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="17" name="customer_id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="47" parent="17" name="FK5t81yf4oxm1m4at389l9na0fy">
+      <ColNames>customer_id</ColNames>
+    </index>
+    <key id="48" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="49" parent="17" name="FK5t81yf4oxm1m4at389l9na0fy">
+      <ColNames>customer_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="50" parent="18" name="tender_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="18" name="participant_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="52" parent="18" name="FK1q23og5bnadyfdr3i42clj2it">
+      <ColNames>participant_id</ColNames>
+    </index>
+    <index id="53" parent="18" name="FKfs5lo1aauqlooq4opakrf2hv2">
+      <ColNames>tender_id</ColNames>
+    </index>
+    <foreign-key id="54" parent="18" name="FKfs5lo1aauqlooq4opakrf2hv2">
+      <ColNames>tender_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>tenders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="55" parent="18" name="FK1q23og5bnadyfdr3i42clj2it">
+      <ColNames>participant_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>participants</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="56" parent="19" name="project_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="57" parent="19" name="tender_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="58" parent="19" name="FKdxo2e4vboun9y5nqrvytsmhil">
+      <ColNames>project_id</ColNames>
+    </index>
+    <key id="59" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tender_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="19" name="FKdxo2e4vboun9y5nqrvytsmhil">
+      <ColNames>project_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>projects</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="19" name="FK4xbbml9ueebm384capid0iyfd">
+      <ColNames>tender_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>tenders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="62" parent="20" name="participant_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="63" parent="20" name="tender_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="64" parent="20" name="FKd0171vbtnqf6vc0y25iqwg9yi">
+      <ColNames>participant_id</ColNames>
+    </index>
+    <key id="65" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tender_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="66" parent="20" name="FKd0171vbtnqf6vc0y25iqwg9yi">
+      <ColNames>participant_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>participants</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="67" parent="20" name="FKrj9x80tqyrjde5xjmgkcjqwfl">
+      <ColNames>tender_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>tenders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="68" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="69" parent="21" name="active">
+      <Position>2</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="21" name="dateEndOfTender">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="71" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="72" parent="22" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="22" name="participant_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="74" parent="22" name="FK4q573ehscc7qi7ga5sxr7k5mo">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="75" parent="22" name="UK_eb4k930fhgfdhrydoglrncaov">
+      <ColNames>participant_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="76" parent="22" name="UK_eb4k930fhgfdhrydoglrncaov">
+      <ColNames>participant_id</ColNames>
+      <UnderlyingIndexName>UK_eb4k930fhgfdhrydoglrncaov</UnderlyingIndexName>
+    </key>
+    <foreign-key id="77" parent="22" name="FK4q573ehscc7qi7ga5sxr7k5mo">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="78" parent="22" name="FKqlh0qa47rv74v3r5ufyxj2ude">
+      <ColNames>participant_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>projects</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="79" parent="23" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="23" name="project_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="81" parent="23" name="FKjoreo8pojddvrp3cr4x8b610b">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="82" parent="23" name="UK_18y5rtfs91x51elpfsbkx35rj">
+      <ColNames>project_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="83" parent="23" name="UK_18y5rtfs91x51elpfsbkx35rj">
+      <ColNames>project_id</ColNames>
+      <UnderlyingIndexName>UK_18y5rtfs91x51elpfsbkx35rj</UnderlyingIndexName>
+    </key>
+    <foreign-key id="84" parent="23" name="FKjoreo8pojddvrp3cr4x8b610b">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="85" parent="23" name="FKc74un5y8u03pxfbvjdvm3kg06">
+      <ColNames>project_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>projects</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="86" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="87" parent="24" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="24" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="24" name="login">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="24" name="name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="24" name="password">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="24" name="telNumber">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="93" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="94" parent="25" name="User_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="25" name="projectList_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="96" parent="25" name="FKgdkgivcxb0hsbd6o7vwmlrtwu">
+      <ColNames>User_id</ColNames>
+    </index>
+    <index id="97" parent="25" name="UK_l4govy0c2yd2qt6pyu7xt778i">
+      <ColNames>projectList_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="98" parent="25" name="UK_l4govy0c2yd2qt6pyu7xt778i">
+      <ColNames>projectList_id</ColNames>
+      <UnderlyingIndexName>UK_l4govy0c2yd2qt6pyu7xt778i</UnderlyingIndexName>
+    </key>
+    <foreign-key id="99" parent="25" name="FKgdkgivcxb0hsbd6o7vwmlrtwu">
+      <ColNames>User_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="100" parent="25" name="FKjqxuqgpsno6yapuwcb69n540p">
+      <ColNames>projectList_id</ColNames>
+      <RefSchemaName>tenders_db</RefSchemaName>
+      <RefTableName>projects</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

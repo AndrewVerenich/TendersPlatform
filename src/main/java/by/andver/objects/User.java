@@ -26,16 +26,11 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "project_id"))
     private List<Project> projectList;
-
-    public User(String login, String password, String name, String address, String telNumber, String email, List<Project> projectList) {
-        this.login = login;
-        this.password = password;
-        this.name = name;
-        this.address = address;
-        this.telNumber = telNumber;
-        this.email = email;
-        this.projectList = projectList;
-    }
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_participant",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+    private List<Project> participantList;
 
     public User() {
     }
@@ -104,16 +99,11 @@ public class User {
         this.projectList = projectList;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telNumber='" + telNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public List<Project> getParticipantList() {
+        return participantList;
+    }
+
+    public void setParticipantList(List<Project> participantList) {
+        this.participantList = participantList;
     }
 }

@@ -6,4 +6,5 @@ public interface ProjectDAO {
     void saveProject(Project project);
     Project findProjectById(Integer id);
     void deleteProject (Project project);
+    void updateProject (Project project);
 }
