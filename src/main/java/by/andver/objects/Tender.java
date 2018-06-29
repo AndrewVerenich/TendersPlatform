@@ -1,5 +1,7 @@
 package by.andver.objects;
 
+import com.sun.istack.internal.Interned;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -10,23 +12,27 @@ public class Tender {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
-    @JoinTable(name = "tender_project",
-            joinColumns = @JoinColumn(name = "tender_id"),
-            inverseJoinColumns = @JoinColumn(name = "project_id"))
+//    @OneToOne
+//    @JoinTable(name = "tender_project",
+//            joinColumns = @JoinColumn(name = "tender_id"),
+//            inverseJoinColumns = @JoinColumn(name = "project_id"))
     private Project project;
-    @ManyToMany
-    @JoinTable(name = "tender_participant",
-            joinColumns = @JoinColumn(name = "tender_id"),
-            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "tender_participant",
+//            joinColumns = @JoinColumn(name = "tender_id"),
+//            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+    @OneToMany(mappedBy = "tender",cascade = CascadeType.ALL)
     private List<Participant> participantList;
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date dateEndOfTender;
     @Column(nullable = false)
     private Boolean active;
     @OneToOne
-    @JoinTable(name = "tender_winner",
-            joinColumns = @JoinColumn(name = "tender_id"),
-            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+//    @OneToOne
+//    @JoinTable(name = "tender_winner",
+//            joinColumns = @JoinColumn(name = "tender_id"),
+//            inverseJoinColumns = @JoinColumn(name = "participant_id"))
     private Participant winner;
 
     public Tender() {

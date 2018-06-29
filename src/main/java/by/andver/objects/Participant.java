@@ -9,16 +9,17 @@ public class Participant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne(targetEntity = User.class)
+//    @ManyToOne(targetEntity = User.class)
+    @ManyToOne
+    @JoinColumn
     private User user;
-    @ManyToOne(targetEntity = Tender.class)
+//    @ManyToOne(targetEntity = Tender.class)
+    @ManyToOne
+    @JoinColumn
     private Tender tender;
     @Column(nullable = false)
     private Integer bet;
-    @ManyToOne(targetEntity = Tender.class)
-    private List<Tender> tenderList;
-    @OneToOne(targetEntity = Tender.class)
-    private List<Tender> winnTenderList;
+
 
 
     public Participant() {
@@ -56,19 +57,4 @@ public class Participant {
         this.bet = bet;
     }
 
-    public List<Tender> getTenderList() {
-        return tenderList;
-    }
-
-    public void setTenderList(List<Tender> tenderList) {
-        this.tenderList = tenderList;
-    }
-
-    public List<Tender> getWinnTenderList() {
-        return winnTenderList;
-    }
-
-    public void setWinnTenderList(List<Tender> winnTenderList) {
-        this.winnTenderList = winnTenderList;
-    }
 }

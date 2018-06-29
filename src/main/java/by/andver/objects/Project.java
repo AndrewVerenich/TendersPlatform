@@ -14,15 +14,19 @@ public class Project {
     private Integer id;
     @Column(nullable = false)
     private String name;
-    @ManyToOne(targetEntity = User.class)
+//    @ManyToOne
+    @ManyToOne
+    @JoinColumn
     private User customer;
     @Column(nullable = false)
     private Integer firstPrice;
     @Column(nullable = false)
     private Integer complexityClass;
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date endDate;
-    @OneToOne(targetEntity = Tender.class)
+//    @OneToOne(targetEntity = Tender.class)
+    @OneToOne(mappedBy = "project",cascade = CascadeType.ALL)
     private Tender tender;
 
     public Project() {

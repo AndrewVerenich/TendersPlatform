@@ -21,15 +21,17 @@ public class User {
     private String telNumber;
     @Column(nullable = false)
     private String email;
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "user_project",
-            joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "project_id"))
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "user_project",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//        inverseJoinColumns = @JoinColumn(name = "project_id"))
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private List<Project> projectList;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_participant",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "user_participant",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "participant_id"))
+    @OneToMany(mappedBy = "customer",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<Project> participantList;
 
     public User() {

@@ -8,10 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 @Repository
 @Transactional
 public class TenderDAOImpl implements TenderDAO {
+    private static final String FIND_ALL_ACTIVE_TENDERS="select t FROM Tender as t WHERE t.active=true";
+
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -39,6 +45,10 @@ public class TenderDAOImpl implements TenderDAO {
 
     public void updateTender(Tender tender) {
         currentSession().update(tender);
+    }
+
+    public List findActiveTenders() {
+        return currentSession().createQuery(FIND_ALL_ACTIVE_TENDERS).getResultList();
     }
 
 }

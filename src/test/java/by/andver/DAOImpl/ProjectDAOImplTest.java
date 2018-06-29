@@ -1,14 +1,15 @@
 package by.andver.DAOImpl;
 
+import by.andver.interfaces.ProjectDAO;
 import by.andver.objects.Project;
-import by.andver.objects.User;
-import org.hibernate.SessionFactory;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.junit.Assert.*;
@@ -16,20 +17,46 @@ import static org.junit.Assert.*;
 @ContextConfiguration("file:web/WEB-INF/applicationContext.xml")
 public class ProjectDAOImplTest {
     @Autowired
-    public SessionFactory sessionFactory;
-    @Autowired
-    public UserDAOImpl userDAO;
-    @Autowired
-    public ProjectDAOImpl projectDAO;
+    private ProjectDAO projectDAO;
+
+    private Project project;
+
+
+
+    @Before
+    public void init(){
+        project=new Project();
+        project.setName("Школа в г. Жабинка");
+        project.setFirstPrice(1000);
+        project.setComplexityClass(2);
+        project.setEndDate(new Date());
+    }
 
     @Test
     public void shouldSaveProject(){
-//        User user1 = new User("user", "password", "Полесьежилстрой", "г. Брест, ул. Кижеватова, д. 60", "80162456987", "asasas", null);
-//        userDAO.saveUser(user1);
-//        Project project=new Project("Детский сад на 350 мест в г. Брест",user1,1000,2,new Date());
-//        projectDAO.saveProject(project);
-//        assertEquals(project.getName(),projectDAO.findProjectById(1).getName());
+        projectDAO.saveProject(project);
+        Integer id=project.getId();
+        assertEquals(project.getName(),projectDAO.findProjectById(id).getName());
+        projectDAO.deleteProject(project);
     }
 
+    @Test
+    public void shouldUpdateProject(){
+        projectDAO.saveProject(project);
+        Integer id=project.getId();
+        project.setFirstPrice(500);
+        projectDAO.updateProject(project);
+        assertEquals(project.getFirstPrice(),
+                projectDAO.findProjectById(id).getFirstPrice());
+        projectDAO.deleteProject(project);
+    }
 
+    @Test
+    public void shouldDeleteProject(){
+        projectDAO.saveProject(project);
+        Integer id=project.getId();
+        projectDAO.deleteProject(project);
+        assertNull(projectDAO.findProjectById(id));
+
+    }
 }
