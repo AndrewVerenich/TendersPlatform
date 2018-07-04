@@ -1,9 +1,6 @@
 package by.andver.services;
 
-import by.andver.interfaces.ProjectDAO;
-import by.andver.interfaces.TenderDAO;
-import by.andver.interfaces.TenderService;
-import by.andver.interfaces.UserDAO;
+import by.andver.interfaces.*;
 import by.andver.objects.Participant;
 import by.andver.objects.Project;
 import by.andver.objects.Tender;
@@ -31,9 +28,12 @@ public class TenderServiceImplTest {
     public ProjectDAO projectDAO;
     @Autowired
     public TenderDAO tenderDAO;
+    @Autowired
+    public ParticipantDAO participantDAO;
 
     private User user;
     private User user1;
+    private User user2;
     private Project project;
     private Tender tender;
     @Before
@@ -57,6 +57,15 @@ public class TenderServiceImplTest {
         user1.setEmail("strt8@mail.by");
         user1.setProjectList(new LinkedList<Project>());
 
+        user2=new User();
+        user2.setLogin("user2");
+        user2.setPassword("password2");
+        user2.setName("Брестжилстрой");
+        user2.setAddress("г. Брест, ул. Высокая, д. 15");
+        user2.setTelNumber("80162456987");
+        user2.setEmail("bzhstr8@mail.by");
+        user2.setProjectList(new LinkedList<Project>());
+
         project=new Project();
         project.setName("Детский сад на 350 мест в г. Брест");
         project.setCustomer(user);
@@ -65,13 +74,6 @@ public class TenderServiceImplTest {
         project.setEndDate(new Date());
 
         user.getProjectList().add(project);
-
-//        tender=new Tender();
-//        tender.setProject(project);
-//        tender.setActive(true);
-//        tender.setDateEndOfTender(new Date());
-//        tender.setParticipantList(new LinkedList<Participant>());
-
     }
 
     @Test
@@ -79,7 +81,7 @@ public class TenderServiceImplTest {
         tenderService.createNewUser(user);
         Integer id=user.getId();
         assertEquals(user.getName(),userDAO.findUserById(id).getName());
-        userDAO.deleteUser(user);
+        tenderService.removeUser(user);
     }
 
     @Test
@@ -87,29 +89,53 @@ public class TenderServiceImplTest {
         tenderService.createNewUser(user);
         assertEquals(projectDAO.findProjectById(project.getId()).getCustomer().getName(),
                 userDAO.findUserById(user.getId()).getName());
-        userDAO.deleteUser(user);
+        tenderService.removeUser(user);
+    }
+
+    @Test
+    public void shouldCreateNewTender(){
+        tenderService.createNewUser(user);
+        Tender tender=tenderService.createNewTender(project,new Date());
+        assertEquals(tender.getProject().getName(),tenderDAO.findTenderById(tender.getId()).getProject().getName());
+        tenderService.removeTender(tender);
+        tenderService.removeUser(user);
     }
 
     @Test
     public void shouldDoBet(){
-//        userDAO.saveUser(user);
-//        userDAO.saveUser(user1);
-//        projectDAO.saveProject(project);
-//        tenderDAO.saveTender(tender);
-//        tenderService.doBet(user1,tender,999);
-//
-//        assertEquals(new Integer(999),tender.getParticipantList().get(0).getBet());
-//        tender.setProject(null);
-//        tender.setParticipantList(null);
-//        tenderDAO.deleteTender(tender);
-//        userDAO.updateUser(user);
-//        userDAO.updateUser(user1);
-
+        tenderService.createNewUser(user);
+        tenderService.createNewUser(user1);
+        Tender tender=tenderService.createNewTender(project,new Date());
+        tenderService.doBet(user1,tender,999);
+        assertEquals(new Integer(999),
+                tenderDAO.findTenderById(tender.getId())
+                        .getParticipantList().get(0).getBet());
+        tenderService.removeTender(tender);
+        tenderService.removeUser(user);
+        tenderService.removeUser(user1);
     }
 
     @Test
     public void shouldHoldTenders() {
-//        while (true){}
+        tenderService.createNewUser(user);
+        tenderService.createNewUser(user1);
+        tenderService.createNewUser(user2);
+        Tender tender=tenderService.createNewTender(project,new Date());
+        tenderService.doBet(user1,tender,999);
+        tenderService.doBet(user2,tender,998);
+        tenderService.holdTenders();
+//        tender=tenderDAO.refreshTender(tender);
+//        assertEquals(tender.getWinner().getBet(),
+//                new Integer(998));
+//
+        assertEquals(tenderDAO.findTenderById(tender.getId()).getWinner().getBet(),
+                new Integer(998));
+        tender.setWinner(null);
+        tenderDAO.updateTender(tender);
+        tenderService.removeTender(tender);
+        tenderService.removeUser(user);
+        tenderService.removeUser(user1);
+        tenderService.removeUser(user2);
     }
 
 }

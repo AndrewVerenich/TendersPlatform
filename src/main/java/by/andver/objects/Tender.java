@@ -21,7 +21,7 @@ public class Tender {
 //    @JoinTable(name = "tender_participant",
 //            joinColumns = @JoinColumn(name = "tender_id"),
 //            inverseJoinColumns = @JoinColumn(name = "participant_id"))
-    @OneToMany(mappedBy = "tender",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "tender",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Participant> participantList;
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)

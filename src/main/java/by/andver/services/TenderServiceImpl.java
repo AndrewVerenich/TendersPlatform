@@ -11,10 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 @Service
 public class TenderServiceImpl implements TenderService {
     @Autowired
@@ -33,9 +31,19 @@ public class TenderServiceImpl implements TenderService {
         return user;
     }
 
+    public void removeUser(User user) {
+        userDAO.deleteUser(user);
+    }
+
     public Project createNewProject(Project project) {
         projectDAO.saveProject(project);
         return project;
+    }
+
+    public void removeProject(Project project) {
+        project.getCustomer().getProjectList().remove(project);
+        userDAO.updateUser(project.getCustomer());
+        projectDAO.deleteProject(project);
     }
 
     public Tender createNewTender(Project project, Date date){
@@ -46,6 +54,10 @@ public class TenderServiceImpl implements TenderService {
         tender.setDateEndOfTender(date);
         tenderDAO.saveTender(tender);
         return tender;
+    }
+
+    public void removeTender(Tender tender) {
+        tenderDAO.deleteTender(tender);
     }
 
     public Boolean doBet(User user, Tender tender, Integer bet) {
@@ -83,6 +95,8 @@ public class TenderServiceImpl implements TenderService {
                     }
                     tender.setWinner(winner);
                 }
+                tender.setActive(false);
+                tenderDAO.updateTender(tender);
             }
         }
     }
