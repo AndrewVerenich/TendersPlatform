@@ -17,4 +17,5 @@ public interface TenderService {
     Boolean doBet(User user,Tender tender, Integer bet);
     void holdTenders();
     List getAllActiveTenders();
+    List getAllTenders();
 }

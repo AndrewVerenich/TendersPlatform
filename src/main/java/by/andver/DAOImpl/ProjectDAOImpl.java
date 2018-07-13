@@ -2,6 +2,7 @@ package by.andver.DAOImpl;
 
 import by.andver.interfaces.ProjectDAO;
 import by.andver.objects.Project;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,11 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     public Session currentSession(){
-        return sessionFactory.getCurrentSession();
+        try {
+            return sessionFactory.getCurrentSession();
+        }catch (HibernateException e){
+            return sessionFactory.openSession();
+        }
     }
 
     public SessionFactory getSessionFactory() {

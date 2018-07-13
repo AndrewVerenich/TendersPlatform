@@ -105,4 +105,8 @@ public class TenderServiceImpl implements TenderService {
         return tenderDAO.findActiveTenders();
     }
 
+    public List getAllTenders() {
+        return tenderDAO.findAllTenders();
+    }
+
 }

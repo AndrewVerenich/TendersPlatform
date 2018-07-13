@@ -2,6 +2,7 @@ package by.andver.DAOImpl;
 
 import by.andver.interfaces.UserDAO;
 import by.andver.objects.User;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public Session currentSession(){
-        return sessionFactory.getCurrentSession();
+        try {
+            return sessionFactory.getCurrentSession();
+        }catch (HibernateException e){
+            return sessionFactory.openSession();
+        }
     }
 
     public SessionFactory getSessionFactory() {

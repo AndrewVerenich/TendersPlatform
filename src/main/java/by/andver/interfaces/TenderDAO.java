@@ -10,4 +10,5 @@ public interface TenderDAO {
     void deleteTender(Tender tender);
     void updateTender(Tender tender);
     List findActiveTenders();
+    List findAllTenders();
 }

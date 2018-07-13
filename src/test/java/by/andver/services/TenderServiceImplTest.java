@@ -35,7 +35,9 @@ public class TenderServiceImplTest {
     private User user1;
     private User user2;
     private Project project;
+    private Project project1;
     private Tender tender;
+    private Tender tender1;
     @Before
     public void init(){
         user=new User();
@@ -73,7 +75,15 @@ public class TenderServiceImplTest {
         project.setComplexityClass(2);
         project.setEndDate(new Date());
 
+        project1=new Project();
+        project1.setName("Автовокзал в г. Брест");
+        project1.setCustomer(user2);
+        project1.setFirstPrice(1200);
+        project1.setComplexityClass(2);
+        project1.setEndDate(new Date());
+
         user.getProjectList().add(project);
+        user2.getProjectList().add(project1);
     }
 
     @Test
@@ -136,6 +146,14 @@ public class TenderServiceImplTest {
         tenderService.removeUser(user);
         tenderService.removeUser(user1);
         tenderService.removeUser(user2);
+    }
+    @Test
+    public void insertData(){
+        tenderService.createNewUser(user);
+        tenderService.createNewUser(user1);
+        tenderService.createNewUser(user2);
+        Tender tender=tenderService.createNewTender(project,new Date());
+        Tender tender1=tenderService.createNewTender(project1,new Date());
     }
 
 }

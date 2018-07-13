@@ -2,6 +2,7 @@ package by.andver.DAOImpl;
 
 import by.andver.interfaces.TenderDAO;
 import by.andver.objects.Tender;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.util.List;
 @Transactional
 public class TenderDAOImpl implements TenderDAO {
     private static final String FIND_ALL_ACTIVE_TENDERS="select t FROM Tender as t WHERE t.active=true";
+    private static final String FIND_ALL_TENDERS="FROM Tender";
 
 
     @Autowired
@@ -24,7 +26,11 @@ public class TenderDAOImpl implements TenderDAO {
     public TenderDAOImpl() {
     }
     public Session currentSession(){
-        return sessionFactory.getCurrentSession();
+        try {
+            return sessionFactory.getCurrentSession();
+        }catch (HibernateException e){
+            return sessionFactory.openSession();
+        }
     }
 
     public SessionFactory getSessionFactory() {
@@ -49,6 +55,10 @@ public class TenderDAOImpl implements TenderDAO {
 
     public List findActiveTenders() {
         return currentSession().createQuery(FIND_ALL_ACTIVE_TENDERS).getResultList();
+    }
+
+    public List findAllTenders() {
+        return currentSession().createQuery(FIND_ALL_TENDERS).getResultList();
     }
 
 }
