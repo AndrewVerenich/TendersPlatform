@@ -5,5 +5,7 @@
 </head>
 <body>
 cabinet
+
+<a href="/j_spring_security_logout">Выход</a>
 </body>
 </html>

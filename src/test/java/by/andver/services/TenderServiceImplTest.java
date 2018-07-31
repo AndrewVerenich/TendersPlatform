@@ -1,7 +1,6 @@
 package by.andver.services;
 
 import by.andver.interfaces.*;
-import by.andver.objects.Participant;
 import by.andver.objects.Project;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
@@ -41,7 +40,7 @@ public class TenderServiceImplTest {
     @Before
     public void init(){
         user=new User();
-        user.setLogin("user");
+        user.setUsername("user");
         user.setPassword("password");
         user.setName("Полесьежилстрой");
         user.setAddress("г. Брест, ул. Кижеватова, д. 60");
@@ -51,7 +50,7 @@ public class TenderServiceImplTest {
         user.setParticipantList(new LinkedList<Project>());
 
         user1=new User();
-        user1.setLogin("user1");
+        user1.setUsername("user1");
         user1.setPassword("password1");
         user1.setName("Стройтрест 8");
         user1.setAddress("г. Брест, ул. Бульвар Шевченко, д. 8");
@@ -60,7 +59,7 @@ public class TenderServiceImplTest {
         user1.setProjectList(new LinkedList<Project>());
 
         user2=new User();
-        user2.setLogin("user2");
+        user2.setUsername("user2");
         user2.setPassword("password2");
         user2.setName("Брестжилстрой");
         user2.setAddress("г. Брест, ул. Высокая, д. 15");
@@ -84,6 +83,10 @@ public class TenderServiceImplTest {
 
         user.getProjectList().add(project);
         user2.getProjectList().add(project1);
+
+        user.setEnabled(true);
+        user1.setEnabled(true);
+        user2.setEnabled(true);
     }
 
     @Test

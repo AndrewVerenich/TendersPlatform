@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,10 +20,6 @@ public class HomeController {
     @Autowired
     public TenderService tenderService;
 
-    @Autowired
-    public UserDAO userDAO;
-
-
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String getAllTenders(Model model){
         List<Tender> tenders=tenderService.getAllTenders();
@@ -29,7 +27,10 @@ public class HomeController {
         return "allTenders";
     }
     @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String login(){
+    public String login(@RequestParam(value = "error", required = false) String error, Model model){
+        if (error!=null){
+            model.addAttribute("error","Неверный логин или пароль");
+        }
         return "login";
     }
 
@@ -42,6 +43,11 @@ public class HomeController {
     public String cabinet(){
         return "cabinet";
     }
+
+//    @RequestMapping(value = "/cabinet",method = RequestMethod.GET)
+//    public String cabinet(Principal principal){
+//        return "cabinet";
+//    }
 
     @RequestMapping(value = "/rules",method = RequestMethod.GET)
     public String rules(){

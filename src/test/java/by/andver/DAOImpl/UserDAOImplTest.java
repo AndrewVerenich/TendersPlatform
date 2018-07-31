@@ -25,7 +25,7 @@ public class UserDAOImplTest {
     @Before
     public void init(){
         user=new User();
-        user.setLogin("user");
+        user.setUsername("user");
         user.setPassword("password");
         user.setName("Полесьежилстрой");
         user.setAddress("г. Брест, ул. Кижеватова, д. 60");

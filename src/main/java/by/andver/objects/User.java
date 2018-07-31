@@ -10,7 +10,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private String login;
+    private String username;
     @Column(nullable = false)
     private String password;
     @Column(nullable = false)
@@ -34,7 +34,18 @@ public class User {
     @OneToMany(mappedBy = "customer",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<Project> participantList;
 
+    @Column (nullable = false)
+    private Boolean enabled;
+
     public User() {
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public Integer getId() {
@@ -45,12 +56,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
