@@ -7,5 +7,9 @@
 cabinet
 
 <a href="/j_spring_security_logout">Выход</a>
+
+
+${user.name}<br/>
+${user.address}
 </body>
 </html>

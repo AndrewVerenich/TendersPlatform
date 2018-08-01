@@ -35,6 +35,10 @@ public class TenderServiceImpl implements TenderService {
         userDAO.deleteUser(user);
     }
 
+    public User getUser(String username) {
+        return userDAO.findUserByUserName(username);
+    }
+
     public Project createNewProject(Project project) {
         projectDAO.saveProject(project);
         return project;

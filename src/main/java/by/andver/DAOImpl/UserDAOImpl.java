@@ -5,6 +5,7 @@ import by.andver.objects.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,8 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public class UserDAOImpl implements UserDAO {
+
+    private static final String FIND_USER_BY_USERNAME="select u FROM User as u WHERE u.username=?";
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -50,5 +53,11 @@ public class UserDAOImpl implements UserDAO {
 
     public void updateUser(User user) {
         currentSession().update(user);
+    }
+
+    public User findUserByUserName(String username) {
+        Query query=currentSession().createQuery(FIND_USER_BY_USERNAME);
+        query.setParameter(0,username);
+        return (User) query.getSingleResult();
     }
 }

@@ -71,8 +71,15 @@ create table users
 	name varchar(255) not null,
 	password varchar(255) not null,
 	telNumber varchar(255) not null
+);
+
+create table authorities
+(
+	username varchar(50) not null,
+	authority varchar(50) not null
 )
 ;
+
 
 
 

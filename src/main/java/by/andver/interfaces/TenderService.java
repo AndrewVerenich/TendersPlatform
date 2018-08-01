@@ -10,6 +10,7 @@ import java.util.List;
 public interface TenderService {
     User createNewUser(User user);
     void removeUser(User user);
+    User getUser(String username);
     Project createNewProject(Project project);
     void removeProject(Project project);
     Tender createNewTender(Project project, Date date);

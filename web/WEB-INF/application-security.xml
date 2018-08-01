@@ -33,7 +33,7 @@
             SELECT u.username, r.authority
         FROM users u, authorities r
         WHERE u.username = r.username
-        AND u.username=?;"/>
+        AND u.username=?"/>
 
         </authentication-provider>
     </authentication-manager>
