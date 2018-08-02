@@ -5,8 +5,11 @@ import by.andver.interfaces.UserDAO;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +22,9 @@ import java.util.List;
 public class HomeController {
     @Autowired
     public TenderService tenderService;
+
+    @Autowired
+    public PasswordEncoder encoder;
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String getAllTenders(Model model, Principal principal){
@@ -37,7 +43,9 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/registration",method = RequestMethod.GET)
-    public String registration(){
+    public String registration(Model model){
+        User user=new User();
+        model.addAttribute("userForm",user);
         return "registration";
     }
 
@@ -54,8 +62,11 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
-    public String createUser(){
-
+    public String createUser(@ModelAttribute("userForm") User user, BindingResult result, Model model){
+        String password=user.getPassword();
+        user.setPassword(encoder.encode(password));
+        tenderService.createNewUser(user);
+        model.addAttribute("user",user);
         return "cabinet";
     }
 }

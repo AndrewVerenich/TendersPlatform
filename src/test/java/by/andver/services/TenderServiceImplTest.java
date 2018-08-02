@@ -1,13 +1,13 @@
 package by.andver.services;
 
 import by.andver.interfaces.*;
-import by.andver.objects.Project;
-import by.andver.objects.Tender;
-import by.andver.objects.User;
+import by.andver.objects.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 

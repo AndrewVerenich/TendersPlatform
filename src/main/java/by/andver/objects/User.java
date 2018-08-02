@@ -1,5 +1,7 @@
 package by.andver.objects;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -35,7 +37,10 @@ public class User {
     private List<Project> participantList;
 
     @Column (nullable = false)
-    private Boolean enabled;
+    private Boolean enabled=true;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Authority authority;
 
     public User() {
     }
@@ -118,5 +123,13 @@ public class User {
 
     public void setParticipantList(List<Project> participantList) {
         this.participantList = participantList;
+    }
+
+    public Authority getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Authority authority) {
+        this.authority = authority;
     }
 }

@@ -8,21 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="f6b3cd30-46b8-4075-9bd4-a0d2238ccb3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TendersPlatform_war_exploded/WEB-INF/classes/by/andver/controllers/HomeController.class" afterPath="$PROJECT_DIR$/out/artifacts/TendersPlatform_war_exploded/WEB-INF/classes/by/andver/controllers/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/andver/DAOImpl/UserDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/andver/DAOImpl/UserDAOImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/andver/controllers/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/by/andver/controllers/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/andver/interfaces/TenderService.class" afterPath="$PROJECT_DIR$/target/classes/by/andver/interfaces/TenderService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/andver/interfaces/UserDAO.class" afterPath="$PROJECT_DIR$/target/classes/by/andver/interfaces/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/andver/objects/User.class" afterPath="$PROJECT_DIR$/target/classes/by/andver/objects/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/andver/services/TenderServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/andver/services/TenderServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/by/andver/DAOImpl/UserDAOImplTest.class" afterPath="$PROJECT_DIR$/target/test-classes/by/andver/DAOImpl/UserDAOImplTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/UserDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/andver/interfaces/TenderService.java" afterPath="$PROJECT_DIR$/src/main/java/by/andver/interfaces/TenderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/andver/interfaces/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/by/andver/interfaces/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/andver/objects/User.java" afterPath="$PROJECT_DIR$/src/main/java/by/andver/objects/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/andver/services/TenderServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/andver/services/TenderServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/script.sql" afterPath="$PROJECT_DIR$/src/main/resources/script.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/script.sql" afterPath="$PROJECT_DIR$/target/classes/script.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/application-security.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/application-security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/allTenders.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/allTenders.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/cabinet.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/cabinet.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/registration.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/registration.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,90 +63,104 @@
         <option name="myItemId" value="tenders_db" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="users" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="tenders_db@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="tenders_db" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TenderServiceImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="428">
+              <caret line="156" column="43" lean-forward="true" selection-start-line="156" selection-start-column="43" selection-end-line="156" selection-end-column="43" />
+              <folding>
+                <element signature="method#init#0;class#TenderServiceImplTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tenders_db.users" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.users">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tenders_db.authorities" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.authorities">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="676">
+              <caret line="45" column="8" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="application-security.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/application-security.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            <state relative-caret-position="321">
+              <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
               <folding>
-                <marker date="1533040085867" expanded="true" signature="1336:1467" ph="SELECT usern... users" />
-                <marker date="1533040085867" expanded="true" signature="1525:1654" ph="SELECT u.use... users" />
+                <marker date="1533205911708" expanded="true" signature="1363:1469" ph="SELECT usern... users" />
+                <marker date="1533205911708" expanded="true" signature="1363:1494" ph="SELECT usern... users" />
+                <marker date="1533205911708" expanded="true" signature="1363:1557" ph="SELECT usern... users" />
+                <marker date="1533205911708" expanded="true" signature="1571:1662" ph="SELECT u.use... users" />
+                <marker date="1533205911708" expanded="true" signature="1571:1701" ph="SELECT u.use... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff08eecf-fc5a-44e4-b39d-ef5011acb745/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="e#1423#1424#0" expanded="true" />
-                <element signature="e#1460#1461#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TenderService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/interfaces/TenderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="34">
+              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TenderServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/services/TenderServiceImpl.java">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cabinet.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/cabinet.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allTenders.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/allTenders.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="122" column="33" lean-forward="false" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -163,9 +176,10 @@
         <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -180,16 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/ProjectDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/interfaces/ProjectDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/interfaces/ParticipantDAO.java" />
-        <option value="/JPA QL Fragment (Tender.java:213).ql" />
-        <option value="/Hibernate QL Fragment (TenderDAOImpl.java:478).hql" />
-        <option value="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/ParticipantDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/services/TenderService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/ProjectDAOImplTest.java" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.18.RELEASE/spring-test-4.3.18.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunBeforeTestMethodCallbacks.class" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/objects/A.java" />
@@ -208,28 +212,38 @@
         <option value="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/TenderDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/interfaces/TenderDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/TenderDAOImpl.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/registration.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/rules.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/tenders.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/objects/User.java" />
-        <option value="$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ff08eecf-fc5a-44e4-b39d-ef5011acb745/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/script.sql" />
         <option value="dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.authorities" />
         <option value="dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.participants" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/interfaces/TenderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/interfaces/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/andver/services/TenderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/UserDAOImpl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/cabinet.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/application-security.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/allTenders.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/andver/objects/Role.java" />
+        <option value="$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/andver/objects/Authority.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/andver/services/TenderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/registration.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/andver/objects/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/script.sql" />
+        <option value="$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java" />
+        <option value="dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.users" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ff08eecf-fc5a-44e4-b39d-ef5011acb745/console.sql" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/application-security.xml" />
         <option value="$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java" />
       </list>
     </option>
@@ -672,7 +686,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -775,6 +788,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -783,7 +797,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -826,84 +840,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
-    <configuration default="false" name="TenderServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="by.andver.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TendersPlatform" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="by.andver.services" />
-      <option name="MAIN_CLASS_NAME" value="by.andver.services.TenderServiceImplTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="TenderServiceImplTest.shouldHoldTenders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="by.andver.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TendersPlatform" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="by.andver.services" />
-      <option name="MAIN_CLASS_NAME" value="by.andver.services.TenderServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldHoldTenders" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="TenderServiceImplTest.insertData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="by.andver.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TendersPlatform" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="by.andver.services" />
-      <option name="MAIN_CLASS_NAME" value="by.andver.services.TenderServiceImplTest" />
-      <option name="METHOD_NAME" value="insertData" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.0.52" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="TendersPlatform:war exploded">
@@ -999,6 +935,84 @@
         <pattern testClass="by.andver.DAOImpl.TenderDAOImplTest" />
         <pattern testClass="by.andver.DAOImpl.UserDAOImplTest" />
       </patterns>
+      <method />
+    </configuration>
+    <configuration default="false" name="TenderServiceImplTest.insertData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="by.andver.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TendersPlatform" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="by.andver.services" />
+      <option name="MAIN_CLASS_NAME" value="by.andver.services.TenderServiceImplTest" />
+      <option name="METHOD_NAME" value="insertData" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TenderServiceImplTest.shouldCreateNewUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="by.andver.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TendersPlatform" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="by.andver.services" />
+      <option name="MAIN_CLASS_NAME" value="by.andver.services.TenderServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldCreateNewUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TenderServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="by.andver.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TendersPlatform" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="by.andver.services" />
+      <option name="MAIN_CLASS_NAME" value="by.andver.services.TenderServiceImplTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -1582,19 +1596,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="GlassFish Server.glassfish" />
       <item index="1" class="java.lang.String" itemvalue="GlassFish Server.GlassFish" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.shouldHoldTenders" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ParticipantDAOImplTest and 3 more" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.insertData" />
-      <item index="5" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.ParticipantDAOImplTest and 3 more" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.shouldCreateNewUser" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.insertData" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ParticipantDAOImplTest and 3 more" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.shouldHoldTenders" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.insertData" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TenderServiceImplTest.shouldCreateNewUser" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ParticipantDAOImplTest and 3 more" />
       </list>
     </recent_temporary>
   </component>
@@ -1645,44 +1659,51 @@
       <workItem from="1532947117990" duration="204000" />
       <workItem from="1532955133876" duration="3828000" />
       <workItem from="1533025604757" duration="7905000" />
-      <workItem from="1533105904405" duration="1178000" />
+      <workItem from="1533105904405" duration="8850000" />
+      <workItem from="1533129225921" duration="2761000" />
+      <workItem from="1533190748156" duration="51000" />
+      <workItem from="1533192002189" duration="2000" />
+      <workItem from="1533198044925" duration="872000" />
+      <workItem from="1533200126938" duration="245000" />
+      <workItem from="1533203573496" duration="11000" />
+      <workItem from="1533203702510" duration="2273000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 13h 39m 59s.xml">
+    <history-entry file="TenderServiceImplTest - 2018.08.02 at 13h 18m 31s.xml">
+      <configuration name="TenderServiceImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TenderServiceImplTest - 2018.08.02 at 13h 19m 09s.xml">
+      <configuration name="TenderServiceImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TenderServiceImplTest_insertData - 2018.08.02 at 11h 33m 05s.xml">
       <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 12m 14s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="TenderServiceImplTest_shouldCreateNewUser - 2018.08.01 at 11h 16m 55s.xml">
+      <configuration name="TenderServiceImplTest.shouldCreateNewUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 13m 35s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="TenderServiceImplTest_shouldCreateNewUser - 2018.08.01 at 11h 17m 14s.xml">
+      <configuration name="TenderServiceImplTest.shouldCreateNewUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 14m 40s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="UserDAOImplTest - 2018.08.01 at 11h 03m 44s.xml">
+      <configuration name="UserDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 15m 02s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="UserDAOImplTest - 2018.08.01 at 11h 13m 22s.xml">
+      <configuration name="UserDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 15m 43s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="UserDAOImplTest_shouldSaveUser - 2018.08.01 at 11h 00m 11s.xml">
+      <configuration name="UserDAOImplTest.shouldSaveUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 17m 06s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="UserDAOImplTest_shouldSaveUser - 2018.08.01 at 11h 01m 16s.xml">
+      <configuration name="UserDAOImplTest.shouldSaveUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 27m 32s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 28m 49s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TenderServiceImplTest_insertData - 2018.07.30 at 16h 29m 37s.xml">
-      <configuration name="TenderServiceImplTest.insertData" configurationId="JUnit" />
+    <history-entry file="UserDAOImplTest_shouldSaveUser - 2018.08.01 at 11h 02m 34s.xml">
+      <configuration name="UserDAOImplTest.shouldSaveUser" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191577000" />
+    <option name="totallyTimeSpent" value="205464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1694,7 +1715,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1720,7 +1741,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2792208" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21969697" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16364606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.4936034" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1729,7 +1751,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900432" sideWeight="0.4936034" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1741,15 +1762,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/WEB-INF/views/registration.jsp</url>
-          <line>4</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1758,311 +1771,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.18.RELEASE/spring-test-4.3.18.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunBeforeTestClassCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.18.RELEASE/spring-core-4.3.18.RELEASE.jar!/org/springframework/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.18.RELEASE/spring-aop-4.3.18.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.18.RELEASE/spring-aop-4.3.18.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.18.RELEASE/spring-test-4.3.18.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.18.RELEASE/spring-test-4.3.18.RELEASE.jar!/org/springframework/test/context/junit4/SpringJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/META-INF/context1.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Tender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/ProjectDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/ParticipantDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/test.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/TenderDAOImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/by.andver.objects.Participant">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>by.andver.objects.Participant</OriginalElement>
-          <nodes>
-            <node x="105.0" y="109.0">by.andver.objects.Tender</node>
-            <node x="97.0" y="0.0">javax.persistence.Entity</node>
-            <node x="240.625" y="0.0">javax.persistence.Table</node>
-            <node x="210.0" y="109.0">by.andver.objects.Participant</node>
-            <node x="335.0" y="109.0">by.andver.objects.User</node>
-            <node x="0.0" y="109.0">by.andver.objects.Project</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="by.andver.objects.Participant" target="javax.persistence.Table">
-              <point x="26.25" y="-14.5" />
-              <point x="9.625" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.Participant" target="javax.persistence.Entity">
-              <point x="-26.25" y="-14.5" />
-              <point x="236.25" y="69.0" />
-              <point x="145.75" y="69.0" />
-              <point x="9.75" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.Project" target="javax.persistence.Table">
-              <point x="21.25" y="-14.5" />
-              <point x="63.75" y="79.0" />
-              <point x="250.25" y="79.0" />
-              <point x="-28.875" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.Project" target="javax.persistence.Entity">
-              <point x="-21.25" y="-14.5" />
-              <point x="21.25" y="69.0" />
-              <point x="106.75" y="69.0" />
-              <point x="-29.25" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.Tender" target="javax.persistence.Table">
-              <point x="21.25" y="-14.5" />
-              <point x="168.75" y="89.0" />
-              <point x="269.5" y="89.0" />
-              <point x="-9.625" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.User" target="javax.persistence.Entity">
-              <point x="-17.75" y="-14.5" />
-              <point x="352.75" y="59.0" />
-              <point x="165.25" y="59.0" />
-              <point x="29.25" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.Tender" target="javax.persistence.Entity">
-              <point x="-21.25" y="-14.5" />
-              <point x="-9.75" y="14.5" />
-            </edge>
-            <edge source="by.andver.objects.User" target="javax.persistence.Table">
-              <point x="17.75" y="-14.5" />
-              <point x="388.25" y="49.0" />
-              <point x="308.0" y="49.0" />
-              <point x="28.875" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-298.0" y="-127.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/ff08eecf-fc5a-44e4-b39d-ef5011acb745.SCHEMA:tenders_db">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>ff08eecf-fc5a-44e4-b39d-ef5011acb745.SCHEMA:tenders_db</OriginalElement>
-          <nodes>
-            <node x="" y="">ff08eecf-fc5a-44e4-b39d-ef5011acb745.TABLE:tenders_db.participants</node>
-            <node x="" y="">ff08eecf-fc5a-44e4-b39d-ef5011acb745.TABLE:tenders_db.projects</node>
-            <node x="" y="">ff08eecf-fc5a-44e4-b39d-ef5011acb745.TABLE:tenders_db.users</node>
-            <node x="" y="">ff08eecf-fc5a-44e4-b39d-ef5011acb745.TABLE:tenders_db.tenders</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="190.0" y="293.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/interfaces/ProjectDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding>
-            <element signature="n#head#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/rules.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/com/sun/jmx/mbeanserver/JmxMBeanServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="800" column="0" lean-forward="false" selection-start-line="800" selection-start-column="0" selection-end-line="800" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/application-security.xml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-786">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Participant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="42" column="33" lean-forward="false" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="156" column="32" lean-forward="false" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff08eecf-fc5a-44e4-b39d-ef5011acb745/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -2090,42 +1803,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/script.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.participants">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.authorities">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -2148,38 +1829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/application-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <marker date="1533040085867" expanded="true" signature="1336:1467" ph="SELECT usern... users" />
-            <marker date="1533040085867" expanded="true" signature="1525:1654" ph="SELECT u.use... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/cabinet.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/TenderDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2191,29 +1844,394 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Role.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#1423#1424#0" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/DAOImpl/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Tender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/TenderDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/interfaces/TenderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="289">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/Authority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/DAOImpl/UserDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/services/TenderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="446">
+          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/registration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2023">
+          <caret line="119" column="53" lean-forward="false" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/script.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.10.RELEASE/spring-security-core-3.2.10.RELEASE.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/_tc/Spring Security bcrypt Example/src/main/java/ru/javastudy/services/intf/MainInterface.java" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/cabinet.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/objects/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1498#1499#0" expanded="false" />
+            <element signature="e#1528#1529#0" expanded="false" />
+            <element signature="e#1575#1576#0" expanded="false" />
+            <element signature="e#1613#1614#0" expanded="false" />
+            <element signature="e#1643#1644#0" expanded="false" />
+            <element signature="e#1668#1669#0" expanded="false" />
+            <element signature="e#1705#1706#0" expanded="false" />
+            <element signature="e#1733#1734#0" expanded="false" />
+            <element signature="e#1768#1769#0" expanded="false" />
+            <element signature="e#1799#1800#0" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1887#1888#0" expanded="false" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1953#1954#0" expanded="false" />
+            <element signature="e#2001#2002#0" expanded="false" />
+            <element signature="e#2041#2042#0" expanded="false" />
+            <element signature="e#2072#2073#0" expanded="false" />
+            <element signature="e#2099#2100#0" expanded="false" />
+            <element signature="e#2139#2140#0" expanded="false" />
+            <element signature="e#2171#2172#0" expanded="false" />
+            <element signature="e#2205#2206#0" expanded="false" />
+            <element signature="e#2235#2236#0" expanded="false" />
+            <element signature="e#2281#2282#0" expanded="false" />
+            <element signature="e#2319#2320#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2387#2388#0" expanded="false" />
+            <element signature="e#2437#2438#0" expanded="false" />
+            <element signature="e#2479#2480#0" expanded="false" />
+            <element signature="e#2511#2512#0" expanded="false" />
+            <element signature="e#2539#2540#0" expanded="false" />
+            <element signature="e#2581#2582#0" expanded="false" />
+            <element signature="e#2615#2616#0" expanded="false" />
+            <element signature="e#2660#2661#0" expanded="false" />
+            <element signature="e#2694#2695#0" expanded="false" />
+            <element signature="e#2755#2756#0" expanded="false" />
+            <element signature="e#2801#2802#0" expanded="false" />
+            <element signature="e#2850#2851#0" expanded="false" />
+            <element signature="e#2888#2889#0" expanded="false" />
+            <element signature="e#2957#2958#0" expanded="false" />
+            <element signature="e#3011#3012#0" expanded="false" />
+            <element signature="e#3050#3051#0" expanded="false" />
+            <element signature="e#3082#3083#0" expanded="false" />
+            <element signature="e#3135#3136#0" expanded="false" />
+            <element signature="e#3177#3178#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/access/intercept/FilterSecurityInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/access/ExceptionTranslationFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/session/SessionManagementFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/savedrequest/RequestCacheAwareFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="454" column="0" lean-forward="false" selection-start-line="454" selection-start-column="0" selection-end-line="454" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="405" column="0" lean-forward="false" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.18.RELEASE/spring-webmvc-4.3.18.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/context/request/async/WebAsyncManagerIntegrationFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.10.RELEASE/spring-security-web-3.2.10.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.18.RELEASE/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="122" column="33" lean-forward="false" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff08eecf-fc5a-44e4-b39d-ef5011acb745/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.users">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/by/andver/services/TenderServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="156" column="43" lean-forward="true" selection-start-line="156" selection-start-column="43" selection-end-line="156" selection-end-column="43" />
+          <folding>
+            <element signature="method#init#0;class#TenderServiceImplTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4d7d4b68/ff08eecf-fc5a-44e4-b39d-ef5011acb745/tenders_db.authorities">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="45" column="8" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/application-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding>
+            <marker date="1533205911708" expanded="true" signature="1363:1469" ph="SELECT usern... users" />
+            <marker date="1533205911708" expanded="true" signature="1363:1494" ph="SELECT usern... users" />
+            <marker date="1533205911708" expanded="true" signature="1363:1557" ph="SELECT usern... users" />
+            <marker date="1533205911708" expanded="true" signature="1571:1662" ph="SELECT u.use... users" />
+            <marker date="1533205911708" expanded="true" signature="1571:1701" ph="SELECT u.use... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/andver/controllers/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
           <folding />
         </state>
       </provider>

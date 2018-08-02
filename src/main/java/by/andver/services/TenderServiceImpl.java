@@ -1,10 +1,7 @@
 package by.andver.services;
 
 import by.andver.interfaces.*;
-import by.andver.objects.Participant;
-import by.andver.objects.Project;
-import by.andver.objects.Tender;
-import by.andver.objects.User;
+import by.andver.objects.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -27,6 +24,10 @@ public class TenderServiceImpl implements TenderService {
     private SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
 
     public User createNewUser(User user){
+        Authority authority=new Authority();
+        authority.setRole(Role.ROLE_USER);
+        authority.setUser(user);
+        user.setAuthority(authority);
         userDAO.saveUser(user);
         return user;
     }

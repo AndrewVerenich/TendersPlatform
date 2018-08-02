@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
     <head>
@@ -113,13 +115,17 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <form class="register-form">
-            <input type="text" placeholder="name"/>
-            <input type="password" placeholder="password"/>
-            <input type="text" placeholder="email address"/>
-            <button>create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </form>
+        <form:form class="register-form" modelAttribute="userForm" method="post" action="/createUser">
+            <form:input path="username" type="text" placeholder="Логин"/>
+            <form:input path="password" type="password" placeholder="Пароль"/>
+            <form:input path="email" type="text" placeholder="Email"/>
+            <form:input path="name" type="text" placeholder="Название организации"/>
+            <form:input path="address" type="text" placeholder="Адрес"/>
+            <form:input path="telNumber" type="text" placeholder="Телефон"/>
+            <input type="submit" value="create">
+            <%--<button>create</button>--%>
+            <p class="message">Already registered? <a href=#>Sign In</a></p>
+        </form:form>
     </div>
 </div>
 </body>

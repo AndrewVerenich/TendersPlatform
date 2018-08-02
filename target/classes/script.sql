@@ -1,3 +1,10 @@
+create table authorities
+(
+	username varchar(50) not null,
+	authority varchar(50) not null
+)
+;
+
 create table participants
 (
 	id int not null auto_increment
@@ -67,19 +74,11 @@ create table users
 		primary key,
 	address varchar(255) not null,
 	email varchar(255) not null,
-	login varchar(255) not null,
 	name varchar(255) not null,
 	password varchar(255) not null,
-	telNumber varchar(255) not null
-);
-
-create table authorities
-(
-	username varchar(50) not null,
-	authority varchar(50) not null
+	telNumber varchar(255) not null,
+	username varchar(255) not null,
+	enabled bit not null
 )
 ;
-
-
-
 

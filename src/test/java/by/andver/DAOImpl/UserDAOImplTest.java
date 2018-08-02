@@ -1,7 +1,9 @@
 package by.andver.DAOImpl;
 
 import by.andver.interfaces.UserDAO;
+import by.andver.objects.Authority;
 import by.andver.objects.Project;
+import by.andver.objects.Role;
 import by.andver.objects.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +23,7 @@ public class UserDAOImplTest {
     private UserDAO userDAO;
 
     private User user;
+    private Authority authority;
 
     @Before
     public void init(){
@@ -32,6 +35,13 @@ public class UserDAOImplTest {
         user.setTelNumber("80162456987");
         user.setEmail("pzs@mail.by");
         user.setProjectList(new LinkedList<Project>());
+        user.setEnabled(true);
+
+        authority=new Authority();
+        authority.setRole(Role.ROLE_USER);
+        user.setAuthority(authority);
+        authority.setUser(user);
+
     }
 
     @Test
