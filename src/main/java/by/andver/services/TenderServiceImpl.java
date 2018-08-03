@@ -61,6 +61,10 @@ public class TenderServiceImpl implements TenderService {
         return tender;
     }
 
+    public Tender getTender(Integer id) {
+        return tenderDAO.findTenderById(id);
+    }
+
     public void removeTender(Tender tender) {
         tenderDAO.deleteTender(tender);
     }
@@ -73,7 +77,7 @@ public class TenderServiceImpl implements TenderService {
         participant.setTender(tender);
         participantDAO.saveParticipant(participant);
         tender.getParticipantList().add(participant);
-        tenderDAO.updateTender(tender);
+//        tenderDAO.updateTender(tender);
         return true;
         }
         return false;

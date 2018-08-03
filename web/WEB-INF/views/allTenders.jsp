@@ -92,7 +92,7 @@
                         <div class="panel-heading">
                             <div class="container-fluid">
                                <div class="col-sm-11">
-                                   <a href="#"><strong>${tender.project.name}</strong></a>
+                                   <a href="/tendDetails?tenderId=${tender.id}"><strong>${tender.project.name}</strong></a>
                                </div>
                                <div class="col-sm-1">
                                    <c:if test="${tender.active==true}"><strong style="color: green">Активный</strong></c:if>

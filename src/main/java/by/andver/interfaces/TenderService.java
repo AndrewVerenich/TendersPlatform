@@ -14,6 +14,7 @@ public interface TenderService {
     Project createNewProject(Project project);
     void removeProject(Project project);
     Tender createNewTender(Project project, Date date);
+    Tender getTender(Integer id);
     void removeTender(Tender tender);
     Boolean doBet(User user,Tender tender, Integer bet);
     void holdTenders();

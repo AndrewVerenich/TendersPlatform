@@ -9,6 +9,7 @@
     <http auto-config="true" use-expressions="true">
     <!--<http auto-config="true">-->
         <intercept-url pattern="/cabinet" access="isAuthenticated()"/>
+        <intercept-url pattern="/doBet/**" access="isAuthenticated()"/>
         <!--<intercept-url pattern="/cabinet" access="ROLE_USER"/>-->
 
         <form-login
