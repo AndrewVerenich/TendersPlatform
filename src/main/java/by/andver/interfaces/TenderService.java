@@ -18,6 +18,8 @@ public interface TenderService {
     void removeTender(Tender tender);
     Boolean doBet(User user,Tender tender, Integer bet);
     void holdTenders();
-    List getAllActiveTenders();
+    List getActiveTenders();
     List getAllTenders();
+    List getCompletedTenders();
+    List getUsersTenders(User user);
 }

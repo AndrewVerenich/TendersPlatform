@@ -110,12 +110,21 @@ public class TenderServiceImpl implements TenderService {
         }
     }
 
-    public List getAllActiveTenders() {
+    public List getActiveTenders() {
         return tenderDAO.findActiveTenders();
     }
 
     public List getAllTenders() {
         return tenderDAO.findAllTenders();
     }
+
+    public List getCompletedTenders() {
+        return tenderDAO.findCompletedTenders();
+    }
+
+    public List getUsersTenders(User user) {
+        return tenderDAO.findTendersByCustomer(user);
+    }
+
 
 }

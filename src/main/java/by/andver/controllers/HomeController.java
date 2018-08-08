@@ -1,7 +1,6 @@
 package by.andver.controllers;
 
 import by.andver.interfaces.TenderService;
-import by.andver.interfaces.UserDAO;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +11,42 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.LinkedList;
 import java.util.List;
 
 @Controller
 public class HomeController {
+
+//    private final Logger logger = Logger.getLogger(HomeController.class);
+
     @Autowired
     public TenderService tenderService;
 
     @Autowired
     public PasswordEncoder encoder;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    public String getAllTenders(Model model, Principal principal){
-        List<Tender> tenders=tenderService.getAllTenders();
-        model.addAttribute("tenders",tenders);
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index(){
+        return "redirect:tenders?active=all";
+    }
+
+    @RequestMapping(value = "/tenders",method = RequestMethod.GET)
+    public String getAllTenders(@RequestParam String active, Model model, Principal principal){
+        List<Tender> tenders;
         model.addAttribute("principal",principal);
+        switch (active){
+            case "all":
+                tenders=tenderService.getAllTenders();
+                model.addAttribute("tenders",tenders);
+                break;
+            case "true":
+                tenders=tenderService.getActiveTenders();
+                model.addAttribute("tenders",tenders);
+                break;
+            case "false":
+                tenders=tenderService.getCompletedTenders();
+                model.addAttribute("tenders",tenders);
+                break;
+        }
         return "allTenders";
     }
 
@@ -50,7 +69,7 @@ public class HomeController {
     public String cabinet(Model model,Principal principal){
         User user=tenderService.getUser(principal.getName());
         model.addAttribute("user",user);
-        return "cabinet";
+        return "cabinet/myCabinet";
     }
 
     @RequestMapping(value = "/rules",method = RequestMethod.GET)
@@ -81,8 +100,6 @@ public class HomeController {
         model.addAttribute("tender",tenderService.getTender(tenderId));
         User user=tenderService.getUser(principal.getName());
         model.addAttribute("user",user);
-//        Integer bid = 0;
-//        model.addAttribute("bid",bid);
         return "doBet";
     }
 
@@ -95,6 +112,13 @@ public class HomeController {
         User user=tenderService.getUser(principal.getName());
         tenderService.doBet(user,tender,bid);
         return "bidAccepted";
+    }
+
+    @RequestMapping(value = "cabinet/myTenders", method = RequestMethod.GET)
+    public String grtMyTenders(Model model,Principal principal){
+        User user=tenderService.getUser(principal.getName());
+        model.addAttribute("tenders",tenderService.getUsersTenders(user));
+        return "cabinet/myTenders";
     }
 }
 
