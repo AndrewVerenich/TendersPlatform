@@ -7,10 +7,10 @@
 
 
     <http auto-config="true" use-expressions="true">
-    <!--<http auto-config="true">-->
+        <remember-me token-validity-seconds="1209600" data-source-ref="dataSource"/>
         <intercept-url pattern="/cabinet/**" access="isAuthenticated()"/>
         <intercept-url pattern="/doBet/**" access="isAuthenticated()"/>
-        <!--<intercept-url pattern="/cabinet" access="ROLE_USER"/>-->
+        <!--<intercept-url pattern="/cabinet/**" access="ROLE_USER"/>-->
 
         <form-login
             login-page="/login"
@@ -23,9 +23,6 @@
 
     <authentication-manager>
         <authentication-provider>
-            <!--<user-service>-->
-            <!--<user name="user" password="user" authorities="ROLE_USER"/>-->
-            <!--</user-service>-->
             <jdbc-user-service data-source-ref="dataSource"
                                users-by-username-query="
             SELECT username, password, CASE enabled WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED'

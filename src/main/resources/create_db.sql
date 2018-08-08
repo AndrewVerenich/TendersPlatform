@@ -1,8 +1,14 @@
 create table authorities
 (
-	username varchar(50) not null,
-	authority varchar(50) not null
+	id int not null auto_increment
+		primary key,
+	role varchar(255) not null,
+	user_id int null
 )
+;
+
+create index FKk91upmbueyim93v469wj7b2qh
+	on authorities (user_id)
 ;
 
 create table participants
@@ -11,11 +17,7 @@ create table participants
 		primary key,
 	bet int not null,
 	tender_id int null,
-	user_id int null,
-	constraint FK61nb4n11pivxkyqlhmxqt6c3n
-	foreign key (tender_id) references tenders_db.tenders (id),
-	constraint FKghixrahoj1s8cloinfx8lyeqa
-	foreign key (user_id) references tenders_db.users (id)
+	user_id int null
 )
 ;
 
@@ -27,6 +29,16 @@ create index FKghixrahoj1s8cloinfx8lyeqa
 	on participants (user_id)
 ;
 
+create table persistent_logins
+(
+	username varchar(64) not null,
+	series varchar(64) not null
+		primary key,
+	token varchar(64) not null,
+	last_used timestamp default CURRENT_TIMESTAMP not null
+)
+;
+
 create table projects
 (
 	id int not null auto_increment
@@ -35,9 +47,7 @@ create table projects
 	endDate date not null,
 	firstPrice int not null,
 	name varchar(255) not null,
-	customer_id int null,
-	constraint FK5t81yf4oxm1m4at389l9na0fy
-	foreign key (customer_id) references tenders_db.users (id)
+	customer_id int null
 )
 ;
 
@@ -68,6 +78,11 @@ create index FKj34grmfcumlrsemw6e8bwgi1a
 	on tenders (project_id)
 ;
 
+alter table participants
+	add constraint FK61nb4n11pivxkyqlhmxqt6c3n
+foreign key (tender_id) references tenders_db.tenders (id)
+;
+
 create table users
 (
 	id int not null auto_increment
@@ -82,4 +97,18 @@ create table users
 )
 ;
 
+alter table authorities
+	add constraint FKk91upmbueyim93v469wj7b2qh
+foreign key (user_id) references tenders_db.users (id)
+;
+
+alter table participants
+	add constraint FKghixrahoj1s8cloinfx8lyeqa
+foreign key (user_id) references tenders_db.users (id)
+;
+
+alter table projects
+	add constraint FK5t81yf4oxm1m4at389l9na0fy
+foreign key (customer_id) references tenders_db.users (id)
+;
 

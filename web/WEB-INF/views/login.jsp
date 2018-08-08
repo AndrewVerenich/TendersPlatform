@@ -29,13 +29,14 @@
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                 outline: 0;
                 background: #f2f2f2;
-                width: 100%;
+                /*width: 100%;*/
                 border: 0;
                 margin: 0 0 15px;
                 padding: 15px;
                 box-sizing: border-box;
                 font-size: 14px;
             }
+
             .form button {
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -87,8 +88,9 @@
                     <p class="title">Введите логин и пароль</p>
                 </c:otherwise>
             </c:choose>
-            <input name="username" type="text" placeholder="Логин"/>
-            <input name="password" type="password" placeholder="Пароль"/>
+            <input name="username" type="text" placeholder="Логин" style="width: 100%"/>
+            <input name="password" type="password" placeholder="Пароль" style="width: 100%"/>
+            <p class="text-info text-left"><input name="_spring_security_remember_me" type="checkbox"/> Запомнить</p>
             <button>Войти</button>
             <p class="message"><a href="/registration">Зарегистрироваться</a></p>
         </form>

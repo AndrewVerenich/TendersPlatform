@@ -1,0 +1,3 @@
+INSERT INTO tenders_db.users (address, email, enabled, name, password, telNumber, username) VALUES ('г. Брест, ул. Кижеватова, д. 60', 'pzs@mail.by', true, 'Полесьежилстрой', '$2a$12$EMw2g5zcvTa6Cx0u/rY4QO9859FkJmMLvvGP3CXMSEKulFaEgDP3W', '+375162456987', 'user');
+INSERT INTO tenders_db.users (address, email, enabled, name, password, telNumber, username) VALUES ('г. Брест, ул. Бульвар Шевченко, д. 8', 'strt8@mail.by', true, 'Стройтрест 8', 'password1', '80162456987', 'user1');
+INSERT INTO tenders_db.users (address, email, enabled, name, password, telNumber, username) VALUES ('г. Брест, ул. Высокая, д. 15', 'bzhstr8@mail.by', true, 'Брестжилстрой', 'password2', '80162456987', 'user2');
