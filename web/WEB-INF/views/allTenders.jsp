@@ -102,6 +102,17 @@
                     </div>
                 </tr>
             </c:forEach>
+
+            <div class="container-fluid text-center">
+            <ul class="pagination">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+            </div>
+
         </div>
 
         <div class="col-sm-2 sidenav">

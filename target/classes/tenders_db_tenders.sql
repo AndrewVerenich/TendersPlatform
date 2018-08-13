@@ -1,0 +1,2 @@
+INSERT INTO tenders_db.tenders (active, dateEndOfTender, project_id, winner_id) VALUES (true, '2018-08-02', 7, null);
+INSERT INTO tenders_db.tenders (active, dateEndOfTender, project_id, winner_id) VALUES (false, '2018-08-02', 8, null);
