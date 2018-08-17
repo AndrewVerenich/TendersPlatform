@@ -9,11 +9,9 @@ public class Participant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-//    @ManyToOne(targetEntity = User.class)
     @ManyToOne
     @JoinColumn
     private User user;
-//    @ManyToOne(targetEntity = Tender.class)
     @ManyToOne
     @JoinColumn
     private Tender tender;

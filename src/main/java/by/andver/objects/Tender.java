@@ -17,7 +17,7 @@ public class Tender {
 //            joinColumns = @JoinColumn(name = "tender_id"),
 //            inverseJoinColumns = @JoinColumn(name = "project_id"))
     private Project project;
-//    @OneToMany(cascade = CascadeType.ALL)
+    //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinTable(name = "tender_participant",
 //            joinColumns = @JoinColumn(name = "tender_id"),
 //            inverseJoinColumns = @JoinColumn(name = "participant_id"))

@@ -29,10 +29,13 @@ public class TenderServiceImplTest {
     public TenderDAO tenderDAO;
     @Autowired
     public ParticipantDAO participantDAO;
+    @Autowired
+    public PasswordEncoder encoder;
 
     private User user;
     private User user1;
     private User user2;
+    private User user3;
     private Project project;
     private Project project1;
     private Tender tender;
@@ -41,17 +44,17 @@ public class TenderServiceImplTest {
     public void init(){
         user=new User();
         user.setUsername("user");
-        user.setPassword("password");
+        user.setPassword(encoder.encode("user"));
         user.setName("Полесьежилстрой");
         user.setAddress("г. Брест, ул. Кижеватова, д. 60");
         user.setTelNumber("80162456987");
         user.setEmail("pzs@mail.by");
         user.setProjectList(new LinkedList<Project>());
-        user.setParticipantList(new LinkedList<Project>());
+//        user.setParticipantList(new LinkedList<Participant>());
 
         user1=new User();
         user1.setUsername("user1");
-        user1.setPassword("password1");
+        user1.setPassword(encoder.encode("password1"));
         user1.setName("Стройтрест 8");
         user1.setAddress("г. Брест, ул. Бульвар Шевченко, д. 8");
         user1.setTelNumber("80162456987");
@@ -60,12 +63,21 @@ public class TenderServiceImplTest {
 
         user2=new User();
         user2.setUsername("user2");
-        user2.setPassword("password2");
+        user2.setPassword(encoder.encode("password2"));
         user2.setName("Брестжилстрой");
         user2.setAddress("г. Брест, ул. Высокая, д. 15");
         user2.setTelNumber("80162456987");
         user2.setEmail("bzhstr8@mail.by");
         user2.setProjectList(new LinkedList<Project>());
+
+        user3=new User();
+        user3.setUsername("1");
+        user3.setPassword(encoder.encode("1"));
+        user3.setName("1");
+        user3.setAddress("1");
+        user3.setTelNumber("1");
+        user3.setEmail("1");
+        user3.setProjectList(new LinkedList<Project>());
 
         project=new Project();
         project.setName("Детский сад на 350 мест в г. Брест");
@@ -87,6 +99,7 @@ public class TenderServiceImplTest {
         user.setEnabled(true);
         user1.setEnabled(true);
         user2.setEnabled(true);
+        user3.setEnabled(true);
     }
 
     @Test
@@ -126,6 +139,7 @@ public class TenderServiceImplTest {
         tenderService.removeTender(tender);
         tenderService.removeUser(user);
         tenderService.removeUser(user1);
+        tenderService.removeUser(user3);
     }
 
     @Test
@@ -135,14 +149,14 @@ public class TenderServiceImplTest {
         tenderService.createNewUser(user2);
         Tender tender=tenderService.createNewTender(project,new Date());
         tenderService.doBet(user1,tender,999);
-        tenderService.doBet(user2,tender,998);
+        tenderService.doBet(user2,tender,999);
         tenderService.holdTenders();
 //        tender=tenderDAO.refreshTender(tender);
 //        assertEquals(tender.getWinner().getBet(),
 //                new Integer(998));
 //
-        assertEquals(tenderDAO.findTenderById(tender.getId()).getWinner().getBet(),
-                new Integer(998));
+        assertEquals(tenderDAO.findTenderById(tender.getId()).getWinner().getUser().getName(),
+                user1.getName());
         tender.setWinner(null);
         tenderDAO.updateTender(tender);
         tenderService.removeTender(tender);
@@ -155,6 +169,7 @@ public class TenderServiceImplTest {
         tenderService.createNewUser(user);
         tenderService.createNewUser(user1);
         tenderService.createNewUser(user2);
+        tenderService.createNewUser(user3);
         Tender tender=tenderService.createNewTender(project,new Date());
         Tender tender1=tenderService.createNewTender(project1,new Date());
     }

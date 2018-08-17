@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Вход</title>
+        <title>Регистрация</title>
         <style>
             .login-page {
                 width: 360px;
@@ -74,7 +74,7 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <form:form class="register-form" modelAttribute="userForm" method="post" action="/createUser">
+        <form:form class="register-form" modelAttribute="user" method="post" action="/createUser">
             <form:input path="username" type="text" placeholder="Логин"/>
             <form:input path="password" type="password" placeholder="Пароль"/>
             <form:input path="email" type="text" placeholder="Email"/>

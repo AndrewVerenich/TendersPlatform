@@ -66,30 +66,31 @@
             <p><a href="/resources/stb_2331.pdf">СТБ 2331-2014 "Здания и сооружения. Классификация"</a></p>
         </div>
         <div class="col-sm-8 text-left">
-            <h3>Ваши тендеры:</h3>
+            <h3>Ваши заявки на участие в тендерах:</h3>
 
-            <c:forEach items="${tenders}" var="tender">
+            <c:forEach items="${bets}" var="bet">
                 <tr>
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
                             <div class="container-fluid">
                                 <div class="col-sm-11">
-                                    <a href="/tendDetails?tenderId=${tender.id}"><strong>${tender.project.name}</strong></a>
+                                    <a href="/tendDetails?tenderId=${bet.tender.id}"><strong>${bet.tender.project.name}</strong></a>
                                 </div>
                                 <div class="col-sm-1">
-                                    <c:if test="${tender.active==true}"><strong style="color: green">Активный</strong></c:if>
-                                    <c:if test="${tender.active==false}"><strong style="color: red">Завершен</strong></c:if>
+                                    <c:if test="${bet.tender.active==true}"><strong style="color: green">Активный</strong></c:if>
+                                    <c:if test="${bet.tender.active==false}"><strong style="color: red">Завершен</strong></c:if>
                                 </div>
                             </div>
                         </div>
 
                         <div class="panel-body">
                             <ul>
-                                <li>Заказчик: <strong>${tender.project.customer.name}</strong></li>
-                                <li>Класс сложности здания: <strong>К-${tender.project.complexityClass}</strong></li>
-                                <li>Нормативная стоимость проектно-изыскательский работ: <strong>${tender.project.firstPrice} BYN</strong></li>
-                                <li>Дата окончания проектирования: <strong>${tender.project.endDate}</strong>, дата проведения тендера: <strong>${tender.dateEndOfTender}</strong></li>
+                                <li>Заказчик: <strong>${bet.tender.project.customer.name}</strong></li>
+                                <li>Класс сложности здания: <strong>К-${bet.tender.project.complexityClass}</strong></li>
+                                <li>Нормативная стоимость проектно-изыскательский работ: <strong>${bet.tender.project.firstPrice} BYN</strong></li>
+                                <li>Дата окончания проектирования: <strong>${bet.tender.project.endDate}</strong>, дата проведения тендера: <strong>${bet.tender.dateEndOfTender}</strong></li>
+                                <li>Предложенная цена: <strong>${bet.bet} BYN</strong></li>
                             </ul>
                         </div>
 

@@ -44,7 +44,7 @@ public class TenderDAOImplTest {
     public void shouldFindAllActiveTenders(){
         tenderDAO.saveTender(tender1);
         tenderDAO.saveTender(tender2);
-        assertEquals(1,tenderDAO.findActiveTenders().toArray().length);
+        assertEquals(1,tenderDAO.findAllActiveTenders().toArray().length);
         tenderDAO.deleteTender(tender1);
         tenderDAO.deleteTender(tender2);
     }

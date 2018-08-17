@@ -10,8 +10,12 @@ public interface TenderDAO {
     Tender findTenderById(Integer id);
     void deleteTender(Tender tender);
     void updateTender(Tender tender);
-    List findActiveTenders();
-    List findAllTenders();
-    List findTendersByCustomer(User user);
-    List findCompletedTenders();
+    List findActiveTenders(Integer page);
+    List findAllTenders(Integer page);
+    List findTendersByCustomer(String userName);
+    List findCompletedTenders(Integer page);
+
+    List findAllActiveTenders();
+
+
 }

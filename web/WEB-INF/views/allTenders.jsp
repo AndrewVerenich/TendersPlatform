@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            $("a[href*='page=${page}']").parent().addClass("active");
+        })
+    </script>
     <title>Тендерная площадка ProjectTrade</title>
     <style>
         .sidenav {
@@ -105,11 +110,24 @@
 
             <div class="container-fluid text-center">
             <ul class="pagination">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <c:if test="${page!=1}"><li><a href="/tenders?active=${active}&page=${page-1}">Пред.</a></li></c:if>
+
+                <c:if test="${page<=5}">
+                <li><a href="/tenders?active=${active}&page=1">1</a></li>
+                <li><a href="/tenders?active=${active}&page=2">2</a></li>
+                <li><a href="/tenders?active=${active}&page=3">3</a></li>
+                <li><a href="/tenders?active=${active}&page=4">4</a></li>
+                <li><a href="/tenders?active=${active}&page=5">5</a></li>
+                </c:if>
+                <c:if test="${page>5}">
+                    <li><a href="/tenders?active=${active}&page=${page-2}">${page-2}</a></li>
+                    <li><a href="/tenders?active=${active}&page=${page-1}">${page-1}</a></li>
+                    <li><a href="/tenders?active=${active}&page=${page}">${page}</a></li>
+                    <li><a href="/tenders?active=${active}&page=${page+1}">${page+1}</a></li>
+                    <li><a href="/tenders?active=${active}&page=${page+2}">${page+2}</a></li>
+                </c:if>
+
+                <li><a href="/tenders?active=${active}&page=${page+1}">След.</a></li>
             </ul>
             </div>
 

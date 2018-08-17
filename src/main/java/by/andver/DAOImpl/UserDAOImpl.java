@@ -60,4 +60,5 @@ public class UserDAOImpl implements UserDAO {
         query.setParameter(0,username);
         return (User) query.getSingleResult();
     }
+
 }

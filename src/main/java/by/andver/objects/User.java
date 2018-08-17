@@ -1,6 +1,5 @@
 package by.andver.objects;
 
-import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,18 +22,10 @@ public class User {
     private String telNumber;
     @Column(nullable = false)
     private String email;
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "user_project",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//        inverseJoinColumns = @JoinColumn(name = "project_id"))
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private List<Project> projectList;
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "user_participant",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "participant_id"))
-    @OneToMany(mappedBy = "customer",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-    private List<Project> participantList;
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+    private List<Participant> participantList;
 
     @Column (nullable = false)
     private Boolean enabled=true;
@@ -117,11 +108,11 @@ public class User {
         this.projectList = projectList;
     }
 
-    public List<Project> getParticipantList() {
+    public List<Participant> getParticipantList() {
         return participantList;
     }
 
-    public void setParticipantList(List<Project> participantList) {
+    public void setParticipantList(List<Participant> participantList) {
         this.participantList = participantList;
     }
 

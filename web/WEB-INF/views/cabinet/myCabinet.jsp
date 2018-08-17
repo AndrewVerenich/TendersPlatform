@@ -77,10 +77,10 @@
 
         <div class="col-sm-2 sidenav">
             <p><a href="/cabinet">Мой профиль</a></p>
-            <p><a href="#">Редактировать профиль</a></p>
-            <p><a href="#">Мои ставки</a></p>
+            <p><a href="/cabinet/editProfile">Редактировать профиль</a></p>
+            <p><a href="/cabinet/myBets">Мои ставки</a></p>
             <p><a href="/cabinet/myTenders">Мои тендеры</a></p>
-            <p><a href="#">Создать тендер</a></p>
+            <p><a href="/cabinet/newTender">Создать тендер</a></p>
         </div>
     </div>
 </div>

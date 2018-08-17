@@ -14,7 +14,7 @@ public class Project {
     private Integer id;
     @Column(nullable = false)
     private String name;
-//    @ManyToOne
+    //    @ManyToOne
     @ManyToOne
     @JoinColumn
     private User customer;
@@ -25,8 +25,9 @@ public class Project {
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date endDate;
-//    @OneToOne(targetEntity = Tender.class)
-    @OneToOne(mappedBy = "project",cascade = CascadeType.ALL)
+    //    @OneToOne(targetEntity = Tender.class)
+//    @OneToOne(mappedBy = "project",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "project")
     private Tender tender;
 
     public Project() {

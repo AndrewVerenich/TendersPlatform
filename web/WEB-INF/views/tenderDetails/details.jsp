@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Личный кабинет</title>
+    <title>Детали тендера</title>
     <style>
         .sidenav {
             padding-top: 20px;
@@ -66,46 +66,37 @@
             <p><a href="/resources/stb_2331.pdf">СТБ 2331-2014 "Здания и сооружения. Классификация"</a></p>
         </div>
         <div class="col-sm-8 text-left">
-            <h3>Ваши тендеры:</h3>
 
-            <c:forEach items="${tenders}" var="tender">
-                <tr>
-                    <div class="panel panel-default">
+            <h3 class="text-center">Сведения о тендере</h3>
+            <p>Название проекта: <strong>${tender.project.name}</strong></p>
+            <p>Класс сложности объекта: <strong>${tender.project.complexityClass}</strong></p>
+            <p>Заказчик проекта: <strong>${tender.project.customer.name}</strong></p>
+            <p>Нормативная стоимость проектно-изыскательский работ: <strong>${tender.project.firstPrice} BYN</strong></p>
+            <p>Дата окончания проектирования: <strong>${tender.project.endDate}</strong></p>
+            <p>Дата проведения тендера: <strong>${tender.dateEndOfTender}</strong></p>
 
-                        <div class="panel-heading">
-                            <div class="container-fluid">
-                                <div class="col-sm-11">
-                                    <a href="/tendDetails?tenderId=${tender.id}"><strong>${tender.project.name}</strong></a>
-                                </div>
-                                <div class="col-sm-1">
-                                    <c:if test="${tender.active==true}"><strong style="color: green">Активный</strong></c:if>
-                                    <c:if test="${tender.active==false}"><strong style="color: red">Завершен</strong></c:if>
-                                </div>
-                            </div>
-                        </div>
+            <h3 class="text-center">Сведения о заказчике</h3>
+            <p>Название организации заказчика: <strong>${tender.project.customer.name}</strong></p>
+            <p>Адрес: <strong>${tender.project.customer.address}</strong></p>
+            <p>Контактный телефон: <strong>${tender.project.customer.telNumber}</strong></p>
+            <p>Электронная почта: <strong>${tender.project.customer.email}</strong></p>
+            <c:if test="${tender.active==true}"><p class="text-center "><a class="btn btn-primary" href="/doBet?tenderId=${tender.id}">Оставить заявку на участие</a></p></c:if>
 
-                        <div class="panel-body">
-                            <ul>
-                                <li>Заказчик: <strong>${tender.project.customer.name}</strong></li>
-                                <li>Класс сложности здания: <strong>К-${tender.project.complexityClass}</strong></li>
-                                <li>Нормативная стоимость проектно-изыскательский работ: <strong>${tender.project.firstPrice} BYN</strong></li>
-                                <li>Дата окончания проектирования: <strong>${tender.project.endDate}</strong>, дата проведения тендера: <strong>${tender.dateEndOfTender}</strong></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </tr>
-            </c:forEach>
-
+            <c:if test="${tender.active==false}">
+                <h3 class="text-center">Победитель тендера</h3>
+                <p>Название организации: <strong>${tender.winner.user.name}</strong></p>
+                <p>Адрес: <strong>${tender.winner.user.address}</strong></p>
+                <p>Контактный телефон: <strong>${tender.winner.user.telNumber}</strong></p>
+                <p>Электронная почта: <strong>${tender.winner.user.email}</strong></p>
+                <p>Предложенная цена: <strong>${tender.winner.bet}  BYN</strong></p>
+            </c:if>
 
         </div>
 
         <div class="col-sm-2 sidenav">
-            <p><a href="/cabinet">Мой профиль</a></p>
-            <p><a href="/cabinet/editProfile">Редактировать профиль</a></p>
-            <p><a href="/cabinet/myBets">Мои ставки</a></p>
-            <p><a href="/cabinet/myTenders">Мои тендеры</a></p>
-            <p><a href="/cabinet/newTender">Создать тендер</a></p>
+            <p><a href="/tenders?active=all">Все тендеры</a></p>
+            <p><a href="/tenders?active=true">Активные тендеры</a></p>
+            <p><a href="/tenders?active=false">Завершенные тендеры</a></p>
         </div>
     </div>
 </div>
@@ -116,6 +107,4 @@
 
 </body>
 </html>
-
-
 

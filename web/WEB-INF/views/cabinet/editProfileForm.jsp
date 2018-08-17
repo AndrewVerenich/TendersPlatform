@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Личный кабинет</title>
+    <title>Редактирование профиля</title>
     <style>
         .sidenav {
             padding-top: 20px;
@@ -53,7 +53,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/cabinet"><span class="glyphicon glyphicon-home"></span> Личный кабинет</a></li>
             <li><a href="/registration"><span class="glyphicon glyphicon-user"></span> Регистрация</a></li>
-            <li><a href="/j_spring_security_logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
+                    <li><a href="/j_spring_security_logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
         </ul>
     </div>
 </nav>
@@ -66,37 +66,18 @@
             <p><a href="/resources/stb_2331.pdf">СТБ 2331-2014 "Здания и сооружения. Классификация"</a></p>
         </div>
         <div class="col-sm-8 text-left">
-            <h3>Ваши тендеры:</h3>
 
-            <c:forEach items="${tenders}" var="tender">
-                <tr>
-                    <div class="panel panel-default">
-
-                        <div class="panel-heading">
-                            <div class="container-fluid">
-                                <div class="col-sm-11">
-                                    <a href="/tendDetails?tenderId=${tender.id}"><strong>${tender.project.name}</strong></a>
-                                </div>
-                                <div class="col-sm-1">
-                                    <c:if test="${tender.active==true}"><strong style="color: green">Активный</strong></c:if>
-                                    <c:if test="${tender.active==false}"><strong style="color: red">Завершен</strong></c:if>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel-body">
-                            <ul>
-                                <li>Заказчик: <strong>${tender.project.customer.name}</strong></li>
-                                <li>Класс сложности здания: <strong>К-${tender.project.complexityClass}</strong></li>
-                                <li>Нормативная стоимость проектно-изыскательский работ: <strong>${tender.project.firstPrice} BYN</strong></li>
-                                <li>Дата окончания проектирования: <strong>${tender.project.endDate}</strong>, дата проведения тендера: <strong>${tender.dateEndOfTender}</strong></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </tr>
-            </c:forEach>
-
+            <h2>Редактирование профиля ${user.username}</h2>
+            <div class="form-group text-center">
+                <form  method="post" action="/cabinet/edit">
+                    <input name="password" type="text" placeholder="Новый пароль"/>
+                    <input name="name" type="text" value="${user.name}"/>
+                    <input name="address" type="text" value="${user.address}"/>
+                    <input name="telNumber" type="text" value="${user.telNumber}"/>
+                    <input name="email" type="text" value="${user.email}"/>
+                    <input id="button" class="btn btn-primary" type="submit" value="Сохранить">
+                </form>
+            </div>
 
         </div>
 
@@ -116,6 +97,3 @@
 
 </body>
 </html>
-
-
-

@@ -88,7 +88,7 @@ public class TenderServiceImpl implements TenderService {
     public void holdTenders() {
 //        System.out.println("in holdTenders()");
         Date currentDate=new Date();
-        List tendersList=tenderDAO.findActiveTenders();
+        List tendersList=tenderDAO.findAllActiveTenders();
         for (Object aTendersList : tendersList) {
             Tender tender = (Tender) aTendersList;
             if (dateFormat.format(currentDate).
@@ -110,21 +110,30 @@ public class TenderServiceImpl implements TenderService {
         }
     }
 
-    public List getActiveTenders() {
-        return tenderDAO.findActiveTenders();
+    public List getActiveTenders(Integer page) {
+        return tenderDAO.findActiveTenders(page);
     }
 
-    public List getAllTenders() {
-        return tenderDAO.findAllTenders();
+    public List getAllTenders(Integer page) {
+        return tenderDAO.findAllTenders(page);
     }
 
-    public List getCompletedTenders() {
-        return tenderDAO.findCompletedTenders();
+    public List getCompletedTenders(Integer page) {
+        return tenderDAO.findCompletedTenders(page);
     }
 
-    public List getUsersTenders(User user) {
-        return tenderDAO.findTendersByCustomer(user);
+    public List getUsersTenders(String userName) {
+        return tenderDAO.findTendersByCustomer(userName);
     }
+
+    public List getMyBets(String userName) {
+        return participantDAO.findUsersBets(userName);
+    }
+
+    public void editUser(User user) {
+        userDAO.updateUser(user);
+    }
+
 
 
 }

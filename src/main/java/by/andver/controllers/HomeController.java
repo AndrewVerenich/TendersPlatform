@@ -1,6 +1,7 @@
 package by.andver.controllers;
 
 import by.andver.interfaces.TenderService;
+import by.andver.objects.Participant;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,6 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-//    private final Logger logger = Logger.getLogger(HomeController.class);
-
     @Autowired
     public TenderService tenderService;
 
@@ -30,23 +29,26 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/tenders",method = RequestMethod.GET)
-    public String getAllTenders(@RequestParam String active, Model model, Principal principal){
+    public String getAllTenders(@RequestParam (defaultValue = "all") String active, @RequestParam (defaultValue = "1") Integer page,
+                                Model model, Principal principal){
         List<Tender> tenders;
         model.addAttribute("principal",principal);
         switch (active){
             case "all":
-                tenders=tenderService.getAllTenders();
+                tenders=tenderService.getAllTenders(page);
                 model.addAttribute("tenders",tenders);
                 break;
             case "true":
-                tenders=tenderService.getActiveTenders();
+                tenders=tenderService.getActiveTenders(page);
                 model.addAttribute("tenders",tenders);
                 break;
             case "false":
-                tenders=tenderService.getCompletedTenders();
+                tenders=tenderService.getCompletedTenders(page);
                 model.addAttribute("tenders",tenders);
                 break;
         }
+        model.addAttribute("page",page);
+        model.addAttribute("active",active);
         return "allTenders";
     }
 
@@ -61,15 +63,8 @@ public class HomeController {
     @RequestMapping(value = "/registration",method = RequestMethod.GET)
     public String registration(Model model){
         User user=new User();
-        model.addAttribute("userForm",user);
-        return "registration";
-    }
-
-    @RequestMapping(value = "/cabinet",method = RequestMethod.GET)
-    public String cabinet(Model model,Principal principal){
-        User user=tenderService.getUser(principal.getName());
         model.addAttribute("user",user);
-        return "cabinet/myCabinet";
+        return "registration";
     }
 
     @RequestMapping(value = "/rules",method = RequestMethod.GET)
@@ -78,7 +73,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
-    public String createUser(@ModelAttribute("userForm") User user, BindingResult result, Model model){
+    public String createUser(@ModelAttribute User user, BindingResult result, Model model){
 
 
 //        --------------------------------------обработка BindingResult
@@ -87,38 +82,6 @@ public class HomeController {
         tenderService.createNewUser(user);
         model.addAttribute("user",user);
         return "redirect:/login";
-    }
-
-    @RequestMapping(value = "/tendDetails", method = RequestMethod.GET)
-    public String tendDetails(@RequestParam Integer tenderId, Model model){
-        model.addAttribute("tender",tenderService.getTender(tenderId));
-        return "details";
-    }
-
-    @RequestMapping(value = "/doBet",method = RequestMethod.GET)
-    public String doBet(@RequestParam Integer tenderId,Model model,Principal principal){
-        model.addAttribute("tender",tenderService.getTender(tenderId));
-        User user=tenderService.getUser(principal.getName());
-        model.addAttribute("user",user);
-        return "doBet";
-    }
-
-    @RequestMapping(value = "/bidAccepted", method = RequestMethod.POST)
-    public String bidAccepted (@ModelAttribute("bid") Integer bid,@RequestParam Integer tenderId,
-                               BindingResult result,Model model, Principal principal){
-
-        //        --------------------------------------обработка BindingResult
-        Tender tender=tenderService.getTender(tenderId);
-        User user=tenderService.getUser(principal.getName());
-        tenderService.doBet(user,tender,bid);
-        return "bidAccepted";
-    }
-
-    @RequestMapping(value = "cabinet/myTenders", method = RequestMethod.GET)
-    public String grtMyTenders(Model model,Principal principal){
-        User user=tenderService.getUser(principal.getName());
-        model.addAttribute("tenders",tenderService.getUsersTenders(user));
-        return "cabinet/myTenders";
     }
 }
 
