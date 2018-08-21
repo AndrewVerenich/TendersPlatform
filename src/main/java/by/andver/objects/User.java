@@ -24,8 +24,8 @@ public class User {
     private String email;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private List<Project> projectList;
-    @OneToMany(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-    private List<Participant> participantList;
+    @OneToMany(mappedBy = "user",cascade =CascadeType.REMOVE)
+    private List<Participant> participants;
 
     @Column (nullable = false)
     private Boolean enabled=true;
@@ -108,12 +108,12 @@ public class User {
         this.projectList = projectList;
     }
 
-    public List<Participant> getParticipantList() {
-        return participantList;
+    public List<Participant> getParticipants() {
+        return participants;
     }
 
-    public void setParticipantList(List<Participant> participantList) {
-        this.participantList = participantList;
+    public void setParticipants(List<Participant> participants) {
+        this.participants = participants;
     }
 
     public Authority getAuthority() {

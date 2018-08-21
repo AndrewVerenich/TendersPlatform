@@ -1,7 +1,6 @@
 package by.andver.controllers;
 
 import by.andver.interfaces.TenderService;
-import by.andver.objects.Participant;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +67,8 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/rules",method = RequestMethod.GET)
-    public String rules(){
+    public String rules(Model model, Principal principal){
+        model.addAttribute("principal",principal);
         return "rules";
     }
 

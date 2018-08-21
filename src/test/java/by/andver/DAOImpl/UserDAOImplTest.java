@@ -32,7 +32,7 @@ public class UserDAOImplTest {
         user.setTelNumber("80162456987");
         user.setEmail("pzs@mail.by");
         user.setProjectList(new LinkedList<Project>());
-//        user.setParticipantList(new LinkedList<Participant>());
+//        user.setParticipants(new LinkedList<Participant>());
         user.setEnabled(true);
 
         authority=new Authority();

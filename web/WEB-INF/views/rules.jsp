@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -52,7 +53,14 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/cabinet"><span class="glyphicon glyphicon-home"></span> Личный кабинет</a></li>
             <li><a href="/registration"><span class="glyphicon glyphicon-user"></span> Регистрация</a></li>
-            <li><a href="/j_spring_security_logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
+            <c:choose>
+                <c:when test="${principal==null}">
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/j_spring_security_logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
     </div>
 </nav>

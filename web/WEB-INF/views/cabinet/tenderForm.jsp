@@ -66,8 +66,10 @@
             <p><a href="/resources/stb_2331.pdf">СТБ 2331-2014 "Здания и сооружения. Классификация"</a></p>
         </div>
         <div class="col-sm-8 text-left">
+            <h3>Создание тендера:</h3>
 
-            <%--<div class="form-group">--%>
+
+        <%--<div class="form-group">--%>
             <form method="post" action="/cabinet/createTender">
                 <p>Название проекта: <input name="name" type="text"/></p>
                 <p>Класс здания или сооружения: <input name="complClass" type="text" pattern="^[ 0-9]+$"/></p>

@@ -74,11 +74,6 @@ public class CabinetController {
 
     @RequestMapping(value = "newTender", method = RequestMethod.GET)
     public String newTender(){
-//        Tender tender=new Tender();
-//        Project project=new Project();
-//        model.addAttribute("tender",tender);
-//        model.addAttribute("project",project);
-
         return "cabinet/tenderForm";
     }
 

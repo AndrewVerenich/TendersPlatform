@@ -12,15 +12,7 @@ public class Tender {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
-//    @OneToOne
-//    @JoinTable(name = "tender_project",
-//            joinColumns = @JoinColumn(name = "tender_id"),
-//            inverseJoinColumns = @JoinColumn(name = "project_id"))
     private Project project;
-    //    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "tender_participant",
-//            joinColumns = @JoinColumn(name = "tender_id"),
-//            inverseJoinColumns = @JoinColumn(name = "participant_id"))
     @OneToMany(mappedBy = "tender",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Participant> participantList;
     @Temporal(TemporalType.DATE)
@@ -29,10 +21,6 @@ public class Tender {
     @Column(nullable = false)
     private Boolean active;
     @OneToOne
-//    @OneToOne
-//    @JoinTable(name = "tender_winner",
-//            joinColumns = @JoinColumn(name = "tender_id"),
-//            inverseJoinColumns = @JoinColumn(name = "participant_id"))
     private Participant winner;
 
     public Tender() {
