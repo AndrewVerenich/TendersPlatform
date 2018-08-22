@@ -21,7 +21,7 @@
                 position: relative;
                 z-index: 1;
                 background: #FFFFFF;
-                max-width: 360px;
+                max-width: 500px;
                 margin: 0 auto 100px;
                 padding: 45px;
                 text-align: center;
@@ -74,13 +74,25 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <form:form class="register-form" modelAttribute="user" method="post" action="/createUser">
+        <form:form class="register-form" modelAttribute="user" method="post" action="/registration">
+            <form:errors path="username" cssClass="text-danger"/>
             <form:input path="username" type="text" placeholder="Логин"/>
+
+            <form:errors path="password" cssClass="text-danger"/>
             <form:input path="password" type="password" placeholder="Пароль"/>
+
+            <form:errors path="email" cssClass="text-danger"/>
             <form:input path="email" type="text" placeholder="Email"/>
+
+            <form:errors path="name" cssClass="text-danger"/>
             <form:input path="name" type="text" placeholder="Название организации"/>
+
+            <form:errors path="address" cssClass="text-danger"/>
             <form:input path="address" type="text" placeholder="Адрес"/>
+
+            <form:errors path="telNumber" cssClass="text-danger"/>
             <form:input path="telNumber" type="text" placeholder="Телефон"/>
+
             <button>Зарегистрироваться</button>
             <p class="message">Уже зарегистрировались? <a href="/login">Вход</a></p>
         </form:form>

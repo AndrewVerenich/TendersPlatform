@@ -2,6 +2,9 @@ package by.andver.objects;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -10,16 +13,25 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotNull(message = "Введите логин")
+    @Size(min = 3, max = 20, message = "Логин должен быть от 3 до 20 символов")
     @Column(nullable = false)
     private String username;
+    @NotNull(message = "Введите пароль")
+    @Size(min = 3, message = "Пароль должен быть от 3 символов")
     @Column(nullable = false)
     private String password;
+    @NotNull(message = "Введите название организации")
+    @Size(min = 3, max = 20, message = "Название должно быть от 3 до 30 символов")
     @Column(nullable = false)
     private String name;
+    @Size(min=3,message = "Введите адресс")
     @Column(nullable = false)
     private String address;
+    @Pattern(regexp = "^\\+?[0-9. ()-]{10,25}$",message = "Неверный номер телефона")
     @Column(nullable = false)
     private String telNumber;
+    @Pattern(regexp = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",message = "Неверный email")
     @Column(nullable = false)
     private String email;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)

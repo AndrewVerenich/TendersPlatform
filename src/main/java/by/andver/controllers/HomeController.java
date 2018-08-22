@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 
@@ -66,22 +67,22 @@ public class HomeController {
         return "registration";
     }
 
-    @RequestMapping(value = "/rules",method = RequestMethod.GET)
-    public String rules(Model model, Principal principal){
-        model.addAttribute("principal",principal);
-        return "rules";
-    }
-
-    @RequestMapping(value = "/createUser", method = RequestMethod.POST)
-    public String createUser(@ModelAttribute User user, BindingResult result, Model model){
-
-
-//        --------------------------------------обработка BindingResult
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String processingRegistration(@Valid @ModelAttribute User user, BindingResult result, Model model){
+        if (result.hasErrors()){
+            return "registration";
+        }
         String password=user.getPassword();
         user.setPassword(encoder.encode(password));
         tenderService.createNewUser(user);
         model.addAttribute("user",user);
         return "redirect:/login";
+    }
+
+    @RequestMapping(value = "/rules",method = RequestMethod.GET)
+    public String rules(Model model, Principal principal){
+        model.addAttribute("principal",principal);
+        return "rules";
     }
 }
 
