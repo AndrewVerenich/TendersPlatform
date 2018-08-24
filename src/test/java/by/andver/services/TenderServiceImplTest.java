@@ -121,7 +121,7 @@ public class TenderServiceImplTest {
     @Test
     public void shouldCreateNewTender(){
         tenderService.createNewUser(user);
-        Tender tender=tenderService.createNewTender(project,new Date());
+//        Tender tender=tenderService.createNewTender(project,new Date());
         assertEquals(tender.getProject().getName(),tenderDAO.findTenderById(tender.getId()).getProject().getName());
         tenderService.removeTender(tender);
         tenderService.removeUser(user);
@@ -131,8 +131,8 @@ public class TenderServiceImplTest {
     public void shouldDoBet(){
         tenderService.createNewUser(user);
         tenderService.createNewUser(user1);
-        Tender tender=tenderService.createNewTender(project,new Date());
-        tenderService.doBet(user1,tender,999);
+//        Tender tender=tenderService.createNewTender(project,new Date());
+//        tenderService.doBet(user1,tender,999);
         assertEquals(new Integer(999),
                 tenderDAO.findTenderById(tender.getId())
                         .getParticipantList().get(0).getBet());
@@ -147,14 +147,10 @@ public class TenderServiceImplTest {
         tenderService.createNewUser(user);
         tenderService.createNewUser(user1);
         tenderService.createNewUser(user2);
-        Tender tender=tenderService.createNewTender(project,new Date());
-        tenderService.doBet(user1,tender,999);
-        tenderService.doBet(user2,tender,999);
+//        Tender tender=tenderService.createNewTender(project,new Date());
+//        tenderService.doBet(user1,tender,999);
+//        tenderService.doBet(user2,tender,999);
         tenderService.holdTenders();
-//        tender=tenderDAO.refreshTender(tender);
-//        assertEquals(tender.getWinner().getBet(),
-//                new Integer(998));
-//
         assertEquals(tenderDAO.findTenderById(tender.getId()).getWinner().getUser().getName(),
                 user1.getName());
         tender.setWinner(null);
@@ -170,8 +166,8 @@ public class TenderServiceImplTest {
         tenderService.createNewUser(user1);
         tenderService.createNewUser(user2);
         tenderService.createNewUser(user3);
-        Tender tender=tenderService.createNewTender(project,new Date());
-        Tender tender1=tenderService.createNewTender(project1,new Date());
+//        Tender tender=tenderService.createNewTender(project,new Date());
+//        Tender tender1=tenderService.createNewTender(project1,new Date());
     }
 
 }

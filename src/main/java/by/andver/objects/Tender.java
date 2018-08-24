@@ -3,6 +3,8 @@ package by.andver.objects;
 import com.sun.istack.internal.Interned;
 
 import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 @Entity
@@ -15,6 +17,8 @@ public class Tender {
     private Project project;
     @OneToMany(mappedBy = "tender",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Participant> participantList;
+    @Future(message = "Вы ввели неверную дату")
+    @NotNull(message = "Выберите дату")
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date dateEndOfTender;

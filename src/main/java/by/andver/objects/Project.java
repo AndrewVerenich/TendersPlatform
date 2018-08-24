@@ -3,6 +3,10 @@ package by.andver.objects;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 
@@ -13,14 +17,21 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
+    @Size(min = 5,message = "Введите название проекта")
     private String name;
     @ManyToOne
     @JoinColumn
     private User customer;
+    @NotNull(message = "Введите стоимость")
+    @Positive(message = "Введите числовое значение больше нуля")
     @Column(nullable = false)
     private Integer firstPrice;
+    @NotNull(message = "Введите класс сложности")
+    @Positive(message = "Введите числовое значение больше нуля")
     @Column(nullable = false)
     private Integer complexityClass;
+    @Future(message = "Вы ввели неверную дату")
+    @NotNull(message = "Выберите дату")
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date endDate;

@@ -51,15 +51,16 @@ public class TenderServiceImpl implements TenderService {
         projectDAO.deleteProject(project);
     }
 
-    public Tender createNewTender(Project project, Date date){
-        Tender tender=new Tender();
-        tender.setProject(project);
-        tender.setParticipantList(new LinkedList<Participant>());
+    public Tender createNewTender(Tender tender, Project project, String username) {
+        User user=getUser(username);
+        user.getProjectList().add(project);
+        project.setCustomer(user);
+        tender.setProject(createNewProject(project));
         tender.setActive(true);
-        tender.setDateEndOfTender(date);
         tenderDAO.saveTender(tender);
         return tender;
     }
+
 
     public Tender getTender(Integer id) {
         return tenderDAO.findTenderById(id);
@@ -69,18 +70,9 @@ public class TenderServiceImpl implements TenderService {
         tenderDAO.deleteTender(tender);
     }
 
-    public Boolean doBet(User user, Tender tender, Integer bet) {
-        if (!tender.getProject().getCustomer().getName().equals(user.getName())){
-        Participant participant=new Participant();
-        participant.setUser(user);
-        participant.setBet(bet);
-        participant.setTender(tender);
+
+    public void doBet(Participant participant) {
         participantDAO.saveParticipant(participant);
-        tender.getParticipantList().add(participant);
-//        tenderDAO.updateTender(tender);
-        return true;
-        }
-        return false;
     }
 
     @Scheduled(cron = "0 0 1 * * *",zone = "Europe/Minsk")
@@ -130,8 +122,13 @@ public class TenderServiceImpl implements TenderService {
         return participantDAO.findUsersBets(userName);
     }
 
-    public void editUser(User user) {
-        userDAO.updateUser(user);
+//    public void editUser(String userName) {
+//
+//        userDAO.updateUser(getUser(userName));
+//    }
+
+    public void editUser(String userName,String password, String name, String address, String telNumber, String email) {
+        userDAO.updateUserByUsername(userName, password, name, address, telNumber, email);
     }
 
 

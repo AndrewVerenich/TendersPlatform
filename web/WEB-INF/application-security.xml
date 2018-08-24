@@ -10,6 +10,7 @@
         <remember-me token-validity-seconds="1209600" data-source-ref="dataSource"/>
         <intercept-url pattern="/cabinet/**" access="isAuthenticated()"/>
         <intercept-url pattern="/doBet/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/tendDetails/**" access="isAuthenticated()"/>
         <!--<intercept-url pattern="/cabinet/**" access="ROLE_USER"/>-->
 
         <form-login

@@ -80,7 +80,11 @@
             <p>Адрес: <strong>${tender.project.customer.address}</strong></p>
             <p>Контактный телефон: <strong>${tender.project.customer.telNumber}</strong></p>
             <p>Электронная почта: <strong>${tender.project.customer.email}</strong></p>
-            <c:if test="${tender.active==true}"><p class="text-center "><a class="btn btn-primary" href="/doBet?tenderId=${tender.id}">Оставить заявку на участие</a></p></c:if>
+            <c:if test="${tender.active==true}">
+                <c:if test="${user.username!=tender.project.customer.username}">
+                <p class="text-center "><a class="btn btn-primary" href="/doBet?tenderId=${tender.id}">Оставить заявку на участие</a></p>
+                </c:if>
+            </c:if>
 
             <c:if test="${tender.active==false}">
                 <h3 class="text-center">Победитель тендера</h3>

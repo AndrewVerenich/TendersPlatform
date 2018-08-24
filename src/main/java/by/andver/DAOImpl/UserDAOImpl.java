@@ -8,14 +8,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 
 @Repository
 @Transactional
 public class UserDAOImpl implements UserDAO {
 
     private static final String FIND_USER_BY_USERNAME="select u FROM User as u WHERE u.username=?";
+    private static final String UPDATE_USER_BY_USERNAME="update User u set u.name=?, u.password=?, u.address=?, u.telNumber=?, u.email=? WHERE u.username=?";
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -55,10 +56,24 @@ public class UserDAOImpl implements UserDAO {
         currentSession().update(user);
     }
 
+    public void updateUserByUsername(String userName,String password, String name, String address, String telNumber, String email) {
+        Query query=currentSession().createQuery(UPDATE_USER_BY_USERNAME);
+        query.setParameter(0,name);
+        query.setParameter(1,password);
+        query.setParameter(2,address);
+        query.setParameter(3,telNumber);
+        query.setParameter(4,email);
+        query.setParameter(5,userName);
+        query.executeUpdate();
+    }
+
+
     public User findUserByUserName(String username) {
         Query query=currentSession().createQuery(FIND_USER_BY_USERNAME);
         query.setParameter(0,username);
-        return (User) query.getSingleResult();
+        User user=(User) query.getSingleResult();
+        currentSession().close();
+        return user;
     }
 
 }

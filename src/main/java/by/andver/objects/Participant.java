@@ -1,7 +1,8 @@
 package by.andver.objects;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Entity
 @Table(name="participants")
@@ -15,6 +16,8 @@ public class Participant {
     @ManyToOne
     @JoinColumn
     private Tender tender;
+    @NotNull
+    @Positive(message = "Введите числовое значение больше нуля")
     @Column(nullable = false)
     private Integer bet;
 

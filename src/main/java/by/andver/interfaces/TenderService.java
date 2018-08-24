@@ -1,5 +1,6 @@
 package by.andver.interfaces;
 
+import by.andver.objects.Participant;
 import by.andver.objects.Project;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
@@ -13,16 +14,17 @@ public interface TenderService {
     User getUser(String username);
     Project createNewProject(Project project);
     void removeProject(Project project);
-    Tender createNewTender(Project project, Date date);
+    Tender createNewTender(Tender tender, Project project, String username);
     Tender getTender(Integer id);
     void removeTender(Tender tender);
-    Boolean doBet(User user,Tender tender, Integer bet);
+    void doBet(Participant participant);
     void holdTenders();
     List getActiveTenders(Integer page);
     List getAllTenders(Integer page);
     List getCompletedTenders(Integer page);
     List getUsersTenders(String userName);
     List getMyBets(String userName);
-    void editUser(User user);
+    void editUser(String userName,String password, String name, String address, String telNumber, String email);
+//    void editUser(String userName);
 
 }

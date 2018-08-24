@@ -7,6 +7,7 @@ public interface UserDAO {
     User findUserById(Integer id);
     void deleteUser (User user);
     void updateUser (User user);
+    void updateUserByUsername (String userName,String password, String name, String address, String telNumber, String email);
     User findUserByUserName(String username);
 
 }

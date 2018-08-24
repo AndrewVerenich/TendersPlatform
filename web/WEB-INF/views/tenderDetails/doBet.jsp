@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -10,7 +11,11 @@
     <script>
         jQuery(document).ready(function(){
             $("#button").on('click',function (event) {
-                alert("Ваша заявка принята!");
+                if (jQuery("#bet").val()>0)
+                {
+                    alert("Ваша заявка принята!");
+//                    alert(jQuery("#bet").val());
+                }
             });
         })
     </script>
@@ -82,11 +87,13 @@
             <p>Дата окончания проектирования: <strong>${tender.project.endDate}</strong></p>
             <p>Дата проведения тендера: <strong>${tender.dateEndOfTender}</strong></p>
 
+
             <div class="form-group text-center">
-                <form  method="post" action="/bidAccepted?tenderId=${tender.id}">
-                    <input name="bid" type="text" placeholder="Цена"/>
-                    <input id="button" class="btn btn-primary" type="submit" value="Предложить цену">
-                </form>
+                <form:form modelAttribute="participant" method="post" action="/doBet?tenderId=${tender.id}">
+                    <form:input id="bet" path="bet" placeholder="Стоимость" type="number"/>
+                    <p><form:errors path="bet" cssClass="text-danger"/></p>
+                    <button id="button">Предложить цену</button>
+                </form:form>
             </div>
         </div>
 
