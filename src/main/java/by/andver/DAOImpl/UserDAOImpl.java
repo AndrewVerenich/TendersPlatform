@@ -2,6 +2,7 @@ package by.andver.DAOImpl;
 
 import by.andver.interfaces.UserDAO;
 import by.andver.objects.User;
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
