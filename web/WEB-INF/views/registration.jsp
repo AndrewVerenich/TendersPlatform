@@ -72,6 +72,8 @@
     </head>
 </head>
 <body>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <div class="login-page">
     <div class="form">
         <form:form class="register-form" modelAttribute="user" method="post" action="/registration">
@@ -94,7 +96,7 @@
             <form:input path="telNumber" type="text" placeholder="Телефон"/>
 
             <button>Зарегистрироваться</button>
-            <p class="message">Уже зарегистрировались? <a href="/login">Вход</a></p>
+            <p class="message">Уже зарегистрировались? <a href="${contextPath}/login">Вход</a></p>
         </form:form>
     </div>
 </div>

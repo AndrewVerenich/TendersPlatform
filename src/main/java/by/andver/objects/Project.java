@@ -3,10 +3,7 @@ package by.andver.objects;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 
@@ -30,7 +27,7 @@ public class Project {
     @Positive(message = "Введите числовое значение больше нуля")
     @Column(nullable = false)
     private Integer complexityClass;
-    @Future(message = "Вы ввели неверную дату")
+    @FutureOrPresent(message = "Вы ввели неверную дату")
     @NotNull(message = "Выберите дату")
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)

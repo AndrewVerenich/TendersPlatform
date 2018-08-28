@@ -76,6 +76,8 @@
     </head>
 </head>
 <body>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <div class="login-page">
     <div class="form">
         <form class="login-form" action="/j_spring_security_check" method="post">
@@ -92,7 +94,7 @@
             <input name="password" type="password" placeholder="Пароль" style="width: 100%"/>
             <p class="text-info text-left"><input name="_spring_security_remember_me" type="checkbox"/> Запомнить</p>
             <button>Войти</button>
-            <p class="message"><a href="/registration">Зарегистрироваться</a></p>
+            <p class="message"><a href="${contextPath}/registration">Зарегистрироваться</a></p>
         </form>
     </div>
 </div>

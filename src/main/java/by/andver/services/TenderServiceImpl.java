@@ -87,16 +87,15 @@ public class TenderServiceImpl implements TenderService {
         participantDAO.saveParticipant(participant);
     }
 
-    @Scheduled(cron = "0 0 1 * * *",zone = "Europe/Minsk")
-//    @Scheduled(cron = "*/10 * * * * *")
+//    @Scheduled(cron = "0 0 1 * * *",zone = "Europe/Minsk")
+    @Scheduled(cron = "*/10 * * * * *")
     public void holdTenders() {
         logger.info("hold tenders");
         Date currentDate=new Date();
         List tendersList=tenderDAO.findAllActiveTenders();
         for (Object aTendersList : tendersList) {
             Tender tender = (Tender) aTendersList;
-            if (dateFormat.format(currentDate).
-                    equals(dateFormat.format(tender.getDateEndOfTender()))){
+            if (currentDate.compareTo(tender.getDateEndOfTender())>-1){
                 List<Participant> participantList=tender.getParticipantList();
                 Participant winner=null;
                 for (Participant participant: participantList) {
@@ -107,8 +106,8 @@ public class TenderServiceImpl implements TenderService {
                         winner=participant;
                     }
                     tender.setWinner(winner);
-                    logger.info("Tender id="+tender.getId()+" winner="+winner.getUser().getUsername());
                 }
+                logger.info("Tender id="+tender.getId()+" winner="+(winner!=null ? winner.getUser().getUsername() : " none"));
                 tender.setActive(false);
                 tenderDAO.updateTender(tender);
             }
