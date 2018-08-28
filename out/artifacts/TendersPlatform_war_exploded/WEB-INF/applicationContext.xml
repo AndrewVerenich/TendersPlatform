@@ -12,14 +12,16 @@
     <context:annotation-config />
     <context:component-scan base-package="by.andver"/>
 
-    <!--<jee:jndi-lookup id="dataSource" jndi-name="jdbc/db"/>-->
+    <jee:jndi-lookup id="dataSource"
+                     jndi-name="/jdbc/db"
+                     resource-ref="true" />
     
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/tenders_db?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useSSL=false"/>
-    </bean>
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="root"/>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/tenders_db?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useSSL=false"/>-->
+    <!--</bean>-->
 
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" lazy-init="true">
