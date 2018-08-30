@@ -1,8 +1,6 @@
 package by.andver.interfaces;
 
 import by.andver.objects.Participant;
-import by.andver.objects.User;
-
 import java.util.List;
 
 public interface ParticipantDAO {

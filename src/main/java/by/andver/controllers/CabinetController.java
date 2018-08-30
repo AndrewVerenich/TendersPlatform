@@ -12,10 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -26,11 +23,15 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "cabinet")
 public class CabinetController {
-    @Autowired
-    public TenderService tenderService;
+    private final TenderService tenderService;
+
+    private final PasswordEncoder encoder;
 
     @Autowired
-    public PasswordEncoder encoder;
+    public CabinetController(TenderService tenderService, PasswordEncoder encoder) {
+        this.tenderService = tenderService;
+        this.encoder = encoder;
+    }
 
     @InitBinder
     private void dateBinder(WebDataBinder binder) {
@@ -69,9 +70,12 @@ public class CabinetController {
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.POST)
-    public String edit(@ModelAttribute String password, @ModelAttribute String name, @ModelAttribute String address,
-                       @ModelAttribute String telNumber, @ModelAttribute String email, Model model, Principal principal) {
-        tenderService.editUser(principal.getName(),encoder.encode(password),name,address,telNumber,email);
+    public String edit(@Valid @ModelAttribute User user, BindingResult result) {
+        if (result.hasErrors()){
+            return "cabinet/editProfileForm";
+        }
+        user.setPassword(encoder.encode(user.getPassword()));
+        tenderService.editUser(user);
         return "redirect:/cabinet";
     }
 
@@ -95,4 +99,9 @@ public class CabinetController {
         tenderService.createNewTender(tender,project,principal.getName());
         return "redirect:/cabinet";
     }
+//    @GetMapping(value = "del")
+//    public String del(Principal principal){
+//        tenderService.deleteUser(tenderService.getUser(principal.getName()));
+//        return "redirect:/cabinet";
+//    }
 }

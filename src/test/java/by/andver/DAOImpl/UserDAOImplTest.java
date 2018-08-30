@@ -20,22 +20,21 @@ public class UserDAOImplTest {
     private UserDAO userDAO;
 
     private User user;
-    private Authority authority;
 
     @Before
     public void init(){
         user=new User();
-        user.setUsername("user");
-        user.setPassword("password");
+        user.setUsername("testUser");
+        user.setPassword("test");
         user.setName("Полесьежилстрой");
         user.setAddress("г. Брест, ул. Кижеватова, д. 60");
         user.setTelNumber("80162456987");
         user.setEmail("pzs@mail.by");
-        user.setProjectList(new LinkedList<Project>());
-//        user.setParticipants(new LinkedList<Participant>());
         user.setEnabled(true);
+        user.setProjectList(new LinkedList<Project>());
+        user.setParticipants(new LinkedList<Participant>());
 
-        authority=new Authority();
+        Authority authority = new Authority();
         authority.setRole(Role.ROLE_USER);
         user.setAuthority(authority);
         authority.setUser(user);
@@ -57,7 +56,6 @@ public class UserDAOImplTest {
         userDAO.updateUser(user);
         assertEquals(user.getName(),userDAO.findUserById(user.getId()).getName());
         userDAO.deleteUser(user);
-
     }
 
     @Test

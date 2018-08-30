@@ -1,6 +1,5 @@
 package by.andver.controllers;
 
-import by.andver.interfaces.ParticipantDAO;
 import by.andver.interfaces.TenderService;
 import by.andver.objects.Participant;
 import by.andver.objects.Tender;
@@ -20,8 +19,12 @@ import java.security.Principal;
 @Controller
 public class TenderDetController {
 
+    private final TenderService tenderService;
+
     @Autowired
-    public TenderService tenderService;
+    public TenderDetController(TenderService tenderService) {
+        this.tenderService = tenderService;
+    }
 
     @RequestMapping(value = "/tendDetails", method = RequestMethod.GET)
     public String tendDetails(@RequestParam Integer tenderId, Model model, Principal principal) {

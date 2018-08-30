@@ -6,26 +6,30 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 @Service
+@Transactional
 public class TenderServiceImpl implements TenderService {
 
-    public static final Logger logger=Logger.getLogger(TenderServiceImpl.class);
+    private static final Logger logger=Logger.getLogger(TenderServiceImpl.class);
+
+    private final ParticipantDAO participantDAO;
+    private final ProjectDAO projectDAO;
+    private final TenderDAO tenderDAO;
+    private final UserDAO userDAO;
 
     @Autowired
-    private ParticipantDAO participantDAO;
-    @Autowired
-    private ProjectDAO projectDAO;
-    @Autowired
-    private TenderDAO tenderDAO;
-    @Autowired
-    private UserDAO userDAO;
-
-    private SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
+    public TenderServiceImpl(ParticipantDAO participantDAO, ProjectDAO projectDAO, TenderDAO tenderDAO, UserDAO userDAO) {
+        this.participantDAO = participantDAO;
+        this.projectDAO = projectDAO;
+        this.tenderDAO = tenderDAO;
+        this.userDAO = userDAO;
+    }
 
     public User createNewUser(User user){
         logger.info("Create user with username= "+ user.getUsername());
@@ -42,6 +46,7 @@ public class TenderServiceImpl implements TenderService {
         userDAO.deleteUser(user);
     }
 
+    @Transactional(propagation = Propagation.NESTED, readOnly = true)
     public User getUser(String username) {
         logger.info("Get user with username= "+ username);
         return userDAO.findUserByUserName(username);
@@ -72,6 +77,7 @@ public class TenderServiceImpl implements TenderService {
     }
 
 
+    @Transactional(propagation = Propagation.NESTED, readOnly = true)
     public Tender getTender(Integer id) {
         logger.info("Get Tender by id= "+id);
         return tenderDAO.findTenderById(id);
@@ -87,8 +93,9 @@ public class TenderServiceImpl implements TenderService {
         participantDAO.saveParticipant(participant);
     }
 
-//    @Scheduled(cron = "0 0 1 * * *",zone = "Europe/Minsk")
-    @Scheduled(cron = "*/10 * * * * *")
+    @Transactional(propagation = Propagation.REQUIRES_NEW,isolation = Isolation.SERIALIZABLE)
+    @Scheduled(cron = "0 0 1 * * *",zone = "Europe/Minsk")
+//    @Scheduled(cron = "*/10 * * * * *")
     public void holdTenders() {
         logger.info("hold tenders");
         Date currentDate=new Date();
@@ -114,40 +121,44 @@ public class TenderServiceImpl implements TenderService {
         }
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List getActiveTenders(Integer page) {
         logger.info("Get active tenders");
         return tenderDAO.findActiveTenders(page);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List getAllTenders(Integer page) {
         logger.info("Get all tenders");
         return tenderDAO.findAllTenders(page);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List getCompletedTenders(Integer page) {
         logger.info("Get completed tenders");
         return tenderDAO.findCompletedTenders(page);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List getUsersTenders(String userName) {
         logger.info("Get users ("+userName+") tenders");
         return tenderDAO.findTendersByCustomer(userName);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List getMyBets(String userName) {
         logger.info("Get users ("+userName+") bets");
         return participantDAO.findUsersBets(userName);
     }
 
-//    public void editUser(String userName) {
-//
-//        userDAO.updateUser(getUser(userName));
-//    }
+    public void editUser(User user) {
+        userDAO.updateUser(user);
+    }
 
     public void editUser(String userName,String password, String name, String address, String telNumber, String email) {
         userDAO.updateUserByUsername(userName, password, name, address, telNumber, email);
     }
-
-
-
+    public void deleteUser(User user){
+        userDAO.deleteUser(user);
+    }
 }

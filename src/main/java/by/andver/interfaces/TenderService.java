@@ -4,8 +4,6 @@ import by.andver.objects.Participant;
 import by.andver.objects.Project;
 import by.andver.objects.Tender;
 import by.andver.objects.User;
-
-import java.util.Date;
 import java.util.List;
 
 public interface TenderService {
@@ -25,6 +23,7 @@ public interface TenderService {
     List getUsersTenders(String userName);
     List getMyBets(String userName);
     void editUser(String userName,String password, String name, String address, String telNumber, String email);
-//    void editUser(String userName);
+    void editUser(User user);
+    void deleteUser(User user);
 
 }

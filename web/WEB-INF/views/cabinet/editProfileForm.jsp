@@ -72,14 +72,40 @@
 
             <h2>Редактирование профиля ${user.username}</h2>
             <div class="form-group text-center">
-                <form  method="post" action="${contextPath}/cabinet/edit">
-                    <input name="password" type="text" placeholder="Новый пароль"/>
-                    <input name="name" type="text" value="${user.name}"/>
-                    <input name="address" type="text" value="${user.address}"/>
-                    <input name="telNumber" type="text" value="${user.telNumber}"/>
-                    <input name="email" type="text" value="${user.email}"/>
-                    <input id="button" class="btn btn-primary" type="submit" value="Сохранить">
-                </form>
+                <form:form modelAttribute="user" method="post" action="${contextPath}/cabinet/edit">
+                    <form:hidden path="id"/>
+                    <form:hidden path="username"/>
+                    <form:hidden path="enabled"/>
+
+                    <form:errors path="password" cssClass="text-danger"/>
+                    <form:input path="password" type="password"/>
+
+                    <form:errors path="email" cssClass="text-danger"/>
+                    <form:input path="email" type="text"/>
+
+                    <form:errors path="name" cssClass="text-danger"/>
+                    <form:input path="name" type="text"/>
+
+                    <form:errors path="address" cssClass="text-danger"/>
+                    <form:input path="address" type="text"/>
+
+                    <form:errors path="telNumber" cssClass="text-danger"/>
+                    <form:input path="telNumber" type="text"/>
+
+                    <button>Сохранить</button>
+                </form:form>
+
+
+
+
+                <%--<form  method="post" action="${contextPath}/cabinet/edit">--%>
+                    <%--<input name="password" type="text" placeholder="Новый пароль"/>--%>
+                    <%--<input name="name" type="text" value="${user.name}"/>--%>
+                    <%--<input name="address" type="text" value="${user.address}"/>--%>
+                    <%--<input name="telNumber" type="text" value="${user.telNumber}"/>--%>
+                    <%--<input name="email" type="text" value="${user.email}"/>--%>
+                    <%--<input id="button" class="btn btn-primary" type="submit" value="Сохранить">--%>
+                <%--</form>--%>
             </div>
 
         </div>

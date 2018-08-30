@@ -34,9 +34,9 @@ public class User {
     @Pattern(regexp = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",message = "Неверный email")
     @Column(nullable = false)
     private String email;
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.REMOVE)
     private List<Project> projectList;
-    @OneToMany(mappedBy = "user",cascade =CascadeType.REMOVE)
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<Participant> participants;
 
     @Column (nullable = false)

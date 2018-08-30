@@ -17,11 +17,15 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    @Autowired
-    public TenderService tenderService;
+    private final TenderService tenderService;
+
+    private final PasswordEncoder encoder;
 
     @Autowired
-    public PasswordEncoder encoder;
+    public HomeController(TenderService tenderService, PasswordEncoder encoder) {
+        this.tenderService = tenderService;
+        this.encoder = encoder;
+    }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {

@@ -2,7 +2,6 @@ package by.andver.DAOImpl;
 
 import by.andver.interfaces.UserDAO;
 import by.andver.objects.User;
-import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,26 +18,19 @@ public class UserDAOImpl implements UserDAO {
     private static final String FIND_USER_BY_USERNAME="select u FROM User as u WHERE u.username=?";
     private static final String UPDATE_USER_BY_USERNAME="update User u set u.name=?, u.password=?, u.address=?, u.telNumber=?, u.email=? WHERE u.username=?";
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    public UserDAOImpl() {
+    @Autowired
+    public UserDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    public Session currentSession(){
+    private Session currentSession(){
         try {
             return sessionFactory.getCurrentSession();
         }catch (HibernateException e){
             return sessionFactory.openSession();
         }
-    }
-
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
     }
 
     public void saveUser(User user) {
@@ -72,9 +64,7 @@ public class UserDAOImpl implements UserDAO {
     public User findUserByUserName(String username) {
         Query query=currentSession().createQuery(FIND_USER_BY_USERNAME);
         query.setParameter(0,username);
-        User user=(User) query.getSingleResult();
-        currentSession().close();
-        return user;
+        return (User) query.getSingleResult();
     }
 
 }
