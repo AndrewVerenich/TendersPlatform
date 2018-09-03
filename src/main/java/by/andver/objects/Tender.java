@@ -12,7 +12,7 @@ public class Tender {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToOne
+    @OneToOne(cascade =  CascadeType.REMOVE)
     private Project project;
     @OneToMany(mappedBy = "tender",cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Participant> participantList;

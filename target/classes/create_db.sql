@@ -1,3 +1,16 @@
+ALTER TABLE tenders_db.authorities DROP FOREIGN KEY FKk91upmbueyim93v469wj7b2qh;
+ALTER TABLE tenders_db.tenders DROP FOREIGN KEY FKj34grmfcumlrsemw6e8bwgi1a;
+ALTER TABLE tenders_db.tenders DROP FOREIGN KEY FKf8p7q8t9d9eicmo37jwetyk4y;
+ALTER TABLE tenders_db.participants DROP FOREIGN KEY FK61nb4n11pivxkyqlhmxqt6c3n;
+ALTER TABLE tenders_db.participants DROP FOREIGN KEY FKghixrahoj1s8cloinfx8lyeqa;
+ALTER TABLE tenders_db.projects DROP FOREIGN KEY FK5t81yf4oxm1m4at389l9na0fy;
+DROP TABLE IF EXISTS tenders_db.authorities;
+DROP TABLE IF EXISTS tenders_db.tenders;
+DROP TABLE IF EXISTS tenders_db.participants;
+DROP TABLE IF EXISTS tenders_db.projects;
+DROP TABLE IF EXISTS tenders_db.users;
+DROP TABLE IF EXISTS tenders_db.persistent_logins;
+
 create table authorities
 (
 	id int not null auto_increment

@@ -22,8 +22,5 @@ public interface TenderService {
     List getCompletedTenders(Integer page);
     List getUsersTenders(String userName);
     List getMyBets(String userName);
-    void editUser(String userName,String password, String name, String address, String telNumber, String email);
     void editUser(User user);
-    void deleteUser(User user);
-
 }

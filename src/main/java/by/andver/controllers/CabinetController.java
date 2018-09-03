@@ -99,9 +99,4 @@ public class CabinetController {
         tenderService.createNewTender(tender,project,principal.getName());
         return "redirect:/cabinet";
     }
-//    @GetMapping(value = "del")
-//    public String del(Principal principal){
-//        tenderService.deleteUser(tenderService.getUser(principal.getName()));
-//        return "redirect:/cabinet";
-//    }
 }

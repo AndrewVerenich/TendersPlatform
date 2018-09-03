@@ -155,10 +155,4 @@ public class TenderServiceImpl implements TenderService {
         userDAO.updateUser(user);
     }
 
-    public void editUser(String userName,String password, String name, String address, String telNumber, String email) {
-        userDAO.updateUserByUsername(userName, password, name, address, telNumber, email);
-    }
-    public void deleteUser(User user){
-        userDAO.deleteUser(user);
-    }
 }
