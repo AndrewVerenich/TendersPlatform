@@ -2,6 +2,8 @@ package by.andver.DAOImpl;
 
 import by.andver.interfaces.UserDAO;
 import by.andver.objects.User;
+import by.andver.services.TenderServiceImpl;
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,8 +19,11 @@ public class UserDAOImpl implements UserDAO {
 
     private static final String FIND_USER_BY_USERNAME="select u FROM User as u WHERE u.username=?";
     private static final String UPDATE_USER_BY_USERNAME="update User u set u.name=?, u.password=?, u.address=?, u.telNumber=?, u.email=? WHERE u.username=?";
+    private static final String COUNT_USERS_BY_USERNAME="select count(u) from User u where u.username=?";
 
     private final SessionFactory sessionFactory;
+    private static final Logger logger=Logger.getLogger(TenderServiceImpl.class);
+
 
     @Autowired
     public UserDAOImpl(SessionFactory sessionFactory) {
@@ -34,7 +39,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public void saveUser(User user) {
-        currentSession().saveOrUpdate(user);
+        currentSession().save(user);
     }
 
     public User findUserById(Integer id) {
@@ -67,4 +72,14 @@ public class UserDAOImpl implements UserDAO {
         return (User) query.getSingleResult();
     }
 
+    public boolean existsByUserName(String username) {
+        Query query=currentSession().createQuery(COUNT_USERS_BY_USERNAME);
+        query.setParameter(0,username);
+        Long count= (Long) query.getSingleResult();
+        logger.info("Rows with username="+username+"-"+count);
+        if (count==0){
+            return false;
+        }else
+            return true;
+    }
 }

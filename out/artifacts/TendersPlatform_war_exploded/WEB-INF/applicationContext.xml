@@ -12,14 +12,14 @@
     <context:annotation-config />
     <context:component-scan base-package="by.andver"/>
 
-    <!--<jee:jndi-lookup id="dataSource" jndi-name="/jdbc/db" resource-ref="true" />-->
-
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/tenders_db?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useSSL=false"/>
-    </bean>
+    <jee:jndi-lookup id="dataSource" jndi-name="/jdbc/db" resource-ref="true" />
+<!---->
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="root"/>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/tenders_db?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useSSL=false"/>-->
+    <!--</bean>-->
 
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" lazy-init="true">
@@ -29,10 +29,9 @@
     </bean>
 
     <util:properties id="hibernateProperties">
-        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
         <prop key="hibernate.show_sql">true</prop>
         <prop key="hibernate.hbm2ddl.auto">update</prop>
-        <!--<prop key="hibernate.hbm2ddl.auto">create</prop>-->
     </util:properties>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
@@ -41,8 +40,11 @@
 
     <task:scheduler id="scheduler" pool-size="10"/>
     <task:annotation-driven scheduler="scheduler"/>
-    
+
     <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--<bean id="validator"-->
+          <!--class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+    <!--</bean>-->
 
 
 

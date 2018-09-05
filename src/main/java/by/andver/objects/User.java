@@ -1,7 +1,12 @@
 package by.andver.objects;
 
 
+import by.andver.annotations.Unique;
+import by.andver.interfaces.TenderService;
+import by.andver.services.TenderServiceImpl;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -13,9 +18,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Unique(message = "Пользователь с таким логином уже зарегистрирован",service = TenderService.class, serviceQualifier = "tenderServiceImpl")
     @NotNull(message = "Введите логин")
     @Size(min = 3, max = 20, message = "Логин должен быть от 3 до 20 символов")
     @Column(nullable = false)
+//    @Column(nullable = false, unique = true)
     private String username;
     @NotNull(message = "Введите пароль")
     @Size(min = 3, message = "Пароль должен быть от 3 символов")
@@ -31,7 +38,7 @@ public class User {
     @Pattern(regexp = "^\\+?[0-9. ()-]{10,25}$",message = "Неверный номер телефона")
     @Column(nullable = false)
     private String telNumber;
-    @Pattern(regexp = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",message = "Неверный email")
+    @Email(message = "Неверный email")
     @Column(nullable = false)
     private String email;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.REMOVE)

@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 import java.util.Date;
 import java.util.List;
 @Service
 @Transactional
-public class TenderServiceImpl implements TenderService {
+public class TenderServiceImpl implements TenderService{
 
     private static final Logger logger=Logger.getLogger(TenderServiceImpl.class);
 
@@ -155,4 +156,8 @@ public class TenderServiceImpl implements TenderService {
         userDAO.updateUser(user);
     }
 
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public boolean fieldValueExists(Object value) throws UnsupportedOperationException {
+        return this.userDAO.existsByUserName(value.toString());
+    }
 }

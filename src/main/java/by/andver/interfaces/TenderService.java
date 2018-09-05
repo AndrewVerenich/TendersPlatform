@@ -6,7 +6,7 @@ import by.andver.objects.Tender;
 import by.andver.objects.User;
 import java.util.List;
 
-public interface TenderService {
+public interface TenderService extends FieldValueExists {
     User createNewUser(User user);
     void removeUser(User user);
     User getUser(String username);

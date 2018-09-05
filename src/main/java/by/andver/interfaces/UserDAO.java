@@ -9,5 +9,6 @@ public interface UserDAO {
     void updateUser (User user);
     void updateUserByUsername (String userName,String password, String name, String address, String telNumber, String email);
     User findUserByUserName(String username);
+    boolean existsByUserName(String email);
 
 }
