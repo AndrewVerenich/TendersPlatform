@@ -79,55 +79,77 @@
             <p><a href="${contextPath}/resources/stb_2331.pdf">СТБ 2331-2014 "Здания и сооружения. Классификация"</a></p>
         </div>
         <div class="col-sm-8 text-left">
-            <div class="container-fluid col-sm-5">
                 <h3>Создание тендера:</h3>
-
-
+                <div class="form-group text-center">
                 <form method="post" action="${contextPath}/cabinet/newTender">
-                    <p>Название проекта:</p>
-                    <p>
-                        <spring:bind path="project.name">
-                            <input value="${status.value}" name="${status.expression}" type="text"/>
-                        </spring:bind>
-                        <form:errors path="project.name" cssClass="text-danger"/>
-                    </p>
-                    <p>Класс здания или сооружения:</p>
-                    <p>
+                    <table>
+                        <tr>
+                            <td>
+                                Название проекта:
+                            </td>
+                            <td>
+                                <spring:bind path="project.name">
+                                    <input value="${status.value}" name="${status.expression}" type="text"/>
+                                </spring:bind>
+                                <form:errors path="project.name" cssClass="text-danger"/>
+                            </td>
+                        </tr>
 
-                        <spring:bind path="project.complexityClass">
-                            <input value="${status.value}" name="${status.expression}" type="text" pattern="^[ 0-9]+$"/>
-                        </spring:bind>
-                        <form:errors path="project.complexityClass" cssClass="text-danger"/>
+                        <tr>
+                            <td>
+                                Класс здания или сооружения:
+                            </td>
+                            <td>
+                                <spring:bind path="project.complexityClass">
+                                    <input value="${status.value}" name="${status.expression}" type="text" pattern="^[ 0-9]+$"/>
+                                </spring:bind>
+                                <form:errors path="project.complexityClass" cssClass="text-danger"/>
+                            </td>
+                        </tr>
 
-                    </p>
-                    <p>Нормативная стоимость (BYN):</p>
-                    <p>
-                        <spring:bind path="project.firstPrice">
-                            <input value="${status.value}" name="${status.expression}" type="text" pattern="^[ 0-9]+$"/>
-                        </spring:bind>
-                        <form:errors path="project.firstPrice" cssClass="text-danger"/>
+                        <tr>
+                            <td>
+                                Нормативная стоимость (BYN):
+                            </td>
+                            <td>
+                                <spring:bind path="project.firstPrice">
+                                    <input value="${status.value}" name="${status.expression}" type="text" pattern="^[ 0-9]+$"/>
+                                </spring:bind>
+                                <form:errors path="project.firstPrice" cssClass="text-danger"/>
+                            </td>
+                        </tr>
 
-                    </p>
-                    <p>Дата окончания проектирования:</p>
-                    <p>
-                        <spring:bind path="project.endDate">
-                            <input value="${status.value}" name="${status.expression}" type="date"/>
-                        </spring:bind>
-                        <form:errors path="project.endDate" cssClass="text-danger"/>
+                        <tr>
+                            <td>
+                                Дата окончания проектирования:
+                            </td>
+                            <td>
+                                <spring:bind path="project.endDate">
+                                    <input value="${status.value}" name="${status.expression}" type="date"/>
+                                </spring:bind>
+                                <form:errors path="project.endDate" cssClass="text-danger"/>
+                            </td>
+                        </tr>
 
-                    </p>
-                    <p>Дата проведения тендера:</p>
-                    <p>
-                        <spring:bind path="tender.dateEndOfTender">
-                            <input value="${status.value}" name="${status.expression}" type="date"/>
-                        </spring:bind>
-                        <form:errors path="tender.dateEndOfTender" cssClass="text-danger"/>
-                    </p>
-                    <input id="button" class="btn btn-primary" type="submit" value="Сохранить">
+                        <tr>
+                            <td>
+                                Дата проведения тендера:
+                            </td>
+                            <td>
+                                <spring:bind path="tender.dateEndOfTender">
+                                    <input value="${status.value}" name="${status.expression}" type="date"/>
+                                </spring:bind>
+                                <form:errors path="tender.dateEndOfTender" cssClass="text-danger"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="button" class="btn btn-primary" type="submit" value="Сохранить">
+                            </td>
+                        </tr>
+                    </table>
                 </form>
             </div>
-
-
         </div>
 
         <div class="col-sm-2 sidenav">

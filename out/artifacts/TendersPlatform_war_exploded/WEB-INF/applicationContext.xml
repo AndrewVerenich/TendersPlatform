@@ -42,9 +42,6 @@
     <task:annotation-driven scheduler="scheduler"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <!--<bean id="validator"-->
-          <!--class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
-    <!--</bean>-->
 
 
 

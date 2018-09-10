@@ -18,11 +18,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Unique(message = "Пользователь с таким логином уже зарегистрирован",service = TenderService.class, serviceQualifier = "tenderServiceImpl")
+    @Unique(message = "Пользователь с таким логином уже зарегистрирован",service = TenderService.class)
     @NotNull(message = "Введите логин")
     @Size(min = 3, max = 20, message = "Логин должен быть от 3 до 20 символов")
     @Column(nullable = false)
-//    @Column(nullable = false, unique = true)
     private String username;
     @NotNull(message = "Введите пароль")
     @Size(min = 3, message = "Пароль должен быть от 3 символов")

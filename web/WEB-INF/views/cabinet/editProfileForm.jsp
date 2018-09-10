@@ -70,29 +70,73 @@
         </div>
         <div class="col-sm-8 text-left">
 
-            <h2>Редактирование профиля ${user.username}</h2>
+            <h3>Редактирование профиля ${user.username}</h3>
             <div class="form-group text-center">
                 <form:form modelAttribute="user" method="post" action="${contextPath}/cabinet/edit">
+                    <table>
                     <form:hidden path="id"/>
-                    <form:hidden path="username"/>
-                    <form:hidden path="enabled"/>
+                        <form:hidden path="username"/>
+                        <form:hidden path="enabled"/>
 
-                    <form:errors path="password" cssClass="text-danger"/>
-                    <form:input path="password" type="password"/>
+                        <tr>
+                        <td>
+                            <p>Пароль:</p>
+                        </td>
+                        <td>
+                            <form:input path="password" type="password"/>
+                            <form:errors path="password" cssClass="text-danger"/>
 
-                    <form:errors path="email" cssClass="text-danger"/>
-                    <form:input path="email" type="text"/>
+                        </td>
+                    </tr>
 
-                    <form:errors path="name" cssClass="text-danger"/>
-                    <form:input path="name" type="text"/>
+                        <tr>
+                            <td>
+                                <p>Электронная почта:</p>
+                            </td>
+                            <td>
+                                <form:input path="email" type="text"/>
+                                <form:errors path="email" cssClass="text-danger"/>
 
-                    <form:errors path="address" cssClass="text-danger"/>
-                    <form:input path="address" type="text"/>
+                            </td>
+                        </tr>
 
-                    <form:errors path="telNumber" cssClass="text-danger"/>
-                    <form:input path="telNumber" type="text"/>
+                        <tr>
+                            <td>
+                                <p>Название организации:</p>
+                            </td>
+                            <td>
+                                <form:input path="name" type="text"/>
+                                <form:errors path="name" cssClass="text-danger"/>
 
-                    <button>Сохранить</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <p>Адрес:</p>
+                            </td>
+                            <td>
+                                <form:input path="address" type="text"/>
+                                <form:errors path="address" cssClass="text-danger"/>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <p>Номер телефона:</p>
+                            </td>
+                            <td>
+                                <form:input path="telNumber" type="text"/>
+                                <form:errors path="telNumber" cssClass="text-danger"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <button class="btn btn-primary">Сохранить</button></td>
+                        </tr>
+                    </table>
                 </form:form>
 
 
