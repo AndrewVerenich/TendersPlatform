@@ -1,1 +1,0 @@
-INSERT INTO tenders_db.persistent_logins (username, series, token, last_used) VALUES ('user', 'NKarob7i0hv4Ns9LStglxQ==', 'zbd1x3+dYOB2YYF5i0KJ+w==', '2018-08-08 11:17:17');

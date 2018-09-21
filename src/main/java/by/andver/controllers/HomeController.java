@@ -88,5 +88,11 @@ public class HomeController {
         model.addAttribute("principal", principal);
         return "rules";
     }
+
+    @RequestMapping(value = "/holdTenders", method = RequestMethod.GET)
+    public String hold(){
+        tenderService.holdTenders();
+        return "redirect:/";
+    }
 }
 
