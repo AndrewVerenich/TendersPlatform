@@ -66,7 +66,7 @@
                     <li><a href="${contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li><a href="/j_spring_security_logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>

@@ -80,7 +80,7 @@
 
 <div class="login-page">
     <div class="form">
-        <form class="login-form" action="/j_spring_security_check" method="post">
+        <form class="login-form" action="/login" method="post">
 
             <c:choose>
                 <c:when test="${not empty error}">
@@ -92,7 +92,7 @@
             </c:choose>
             <input name="username" type="text" placeholder="Логин" style="width: 100%"/>
             <input name="password" type="password" placeholder="Пароль" style="width: 100%"/>
-            <p class="text-info text-left"><input name="_spring_security_remember_me" type="checkbox"/> Запомнить</p>
+            <p class="text-info text-left"><input name="remember_me" type="checkbox"/> Запомнить</p>
             <button>Войти</button>
             <p class="message"><a href="${contextPath}/registration">Зарегистрироваться</a></p>
         </form>

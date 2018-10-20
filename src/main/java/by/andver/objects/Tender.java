@@ -16,7 +16,7 @@ public class Tender {
     private Project project;
     @OneToMany(mappedBy = "tender",cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Participant> participantList;
-    @FutureOrPresent(message = "Вы ввели неверную дату")
+//    @FutureOrPresent(message = "Вы ввели неверную дату")
     @NotNull(message = "Выберите дату")
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)

@@ -55,7 +55,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="${contextPath}/cabinet"><span class="glyphicon glyphicon-home"></span> Личный кабинет</a></li>
             <li><a href="${contextPath}/registration"><span class="glyphicon glyphicon-user"></span> Регистрация</a></li>
-                    <li><a href="/j_spring_security_logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
         </ul>
     </div>
 </nav>
