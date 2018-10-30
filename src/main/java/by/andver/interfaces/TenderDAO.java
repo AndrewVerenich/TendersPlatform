@@ -16,4 +16,5 @@ public interface TenderDAO {
     List findAllActiveTenders();
 
 
+    List findAllTenders();
 }

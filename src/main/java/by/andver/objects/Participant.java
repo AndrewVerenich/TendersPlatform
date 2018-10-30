@@ -18,10 +18,7 @@ public class Participant {
     private Tender tender;
     @NotNull
     @Positive(message = "Введите числовое значение больше нуля")
-    @Column(nullable = false)
     private Integer bet;
-
-
 
     public Participant() {
     }

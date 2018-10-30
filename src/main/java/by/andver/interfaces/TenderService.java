@@ -19,6 +19,7 @@ public interface TenderService extends FieldValueExists {
     void holdTenders();
     List getActiveTenders(Integer page);
     List getAllTenders(Integer page);
+    List getAllTendersWithoutPages();
     List getCompletedTenders(Integer page);
     List getUsersTenders(String userName);
     List getMyBets(String userName);

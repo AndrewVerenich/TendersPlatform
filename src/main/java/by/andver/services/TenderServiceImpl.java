@@ -135,6 +135,12 @@ public class TenderServiceImpl implements TenderService{
     }
 
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public List getAllTendersWithoutPages() {
+        logger.info("Get all tenders");
+        return tenderDAO.findAllTenders();
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List getCompletedTenders(Integer page) {
         logger.info("Get completed tenders");
         return tenderDAO.findCompletedTenders(page);

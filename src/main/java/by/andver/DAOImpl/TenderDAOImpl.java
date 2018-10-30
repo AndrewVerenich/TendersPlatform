@@ -84,7 +84,10 @@ public class TenderDAOImpl implements TenderDAO {
         return currentSession().createQuery(FIND_ACTIVE_TENDERS).getResultList();
     }
 
-
+    public List findAllTenders() {
+        Query query=currentSession().createQuery(FIND_ALL_TENDERS);
+        return query.getResultList();
+    }
 
 
 }

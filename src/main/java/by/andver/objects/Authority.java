@@ -1,5 +1,4 @@
 package by.andver.objects;
-
 import javax.persistence.*;
 
 @Entity

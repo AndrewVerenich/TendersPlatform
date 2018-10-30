@@ -1,5 +1,8 @@
 package by.andver.objects;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -9,11 +12,11 @@ import java.util.Date;
 
 @Entity
 @Table(name = "projects")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
     @Size(min = 5,message = "Введите название проекта")
     private String name;
     @ManyToOne
@@ -21,16 +24,13 @@ public class Project {
     private User customer;
     @NotNull(message = "Введите стоимость")
     @Positive(message = "Введите числовое значение больше нуля")
-    @Column(nullable = false)
     private Integer firstPrice;
     @NotNull(message = "Введите класс сложности")
     @Positive(message = "Введите числовое значение больше нуля")
-    @Column(nullable = false)
     private Integer complexityClass;
     @FutureOrPresent(message = "Вы ввели неверную дату")
     @NotNull(message = "Выберите дату")
     @Temporal(TemporalType.DATE)
-    @Column(nullable = false)
     private Date endDate;
     @OneToOne(mappedBy = "project")
     private Tender tender;

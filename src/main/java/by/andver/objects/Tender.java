@@ -1,13 +1,16 @@
 package by.andver.objects;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 @Entity
 @Table(name = "tenders")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Tender {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,13 +18,12 @@ public class Tender {
     @OneToOne(cascade =  CascadeType.REMOVE)
     private Project project;
     @OneToMany(mappedBy = "tender",cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Participant> participantList;
 //    @FutureOrPresent(message = "Вы ввели неверную дату")
     @NotNull(message = "Выберите дату")
     @Temporal(TemporalType.DATE)
-    @Column(nullable = false)
     private Date dateEndOfTender;
-    @Column(nullable = false)
     private Boolean active;
     @OneToOne
     private Participant winner;
