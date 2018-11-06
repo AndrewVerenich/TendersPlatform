@@ -13,7 +13,6 @@
     </annotation-driven>
     <mvc:component-scan base-package="by.andver"/>
 
-
     <resources mapping="/resources/**" location="/resources/"/>
     <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <beans:property name="prefix" value="//WEB-INF/views/"/>
@@ -22,7 +21,5 @@
 
     <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
-
-
 
 </beans:beans>

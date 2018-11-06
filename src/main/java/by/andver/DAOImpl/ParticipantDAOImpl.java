@@ -18,6 +18,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
     private final SessionFactory sessionFactory;
 
     private static final String FIND_USERS_BETS="select p from Participant as p where p.user.username=?";
+    private static final String FIND_TENDERS_BETS="select p from Participant as p where p.tender.id=?";
 
 
     @Autowired
@@ -52,6 +53,12 @@ public class ParticipantDAOImpl implements ParticipantDAO {
     public List findUsersBets(String userName) {
         Query query=currentSession().createQuery(FIND_USERS_BETS);
         query.setParameter(0,userName);
+        return query.getResultList();
+    }
+
+    public List getParticipants(Integer id) {
+        Query query=currentSession().createQuery(FIND_TENDERS_BETS);
+        query.setParameter(0,id);
         return query.getResultList();
     }
 }

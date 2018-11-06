@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface TenderService extends FieldValueExists {
     User createNewUser(User user);
+    void removeUser(String name);
     void removeUser(User user);
     User getUser(String username);
     Project createNewProject(Project project);
@@ -24,4 +25,5 @@ public interface TenderService extends FieldValueExists {
     List getUsersTenders(String userName);
     List getMyBets(String userName);
     void editUser(User user);
+    List<Participant> getParticipantsByTendersId(Integer id);
 }

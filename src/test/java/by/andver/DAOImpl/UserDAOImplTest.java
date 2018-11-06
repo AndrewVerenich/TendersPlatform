@@ -50,6 +50,12 @@ public class UserDAOImplTest {
     }
 
     @Test
+    public void shouldGetUser(){
+        User user=userDAO.findUserByUserName("stranger");
+        assertEquals(null,user);
+    }
+
+    @Test
     public void shouldUpdateUser(){
         userDAO.saveUser(user);
         user.setName("Name");

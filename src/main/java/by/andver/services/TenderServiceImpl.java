@@ -42,8 +42,12 @@ public class TenderServiceImpl implements TenderService{
         return user;
     }
 
+    public void removeUser(String name) {
+        logger.info("Remove user with username= "+ name);
+        userDAO.deleteUser(getUser(name));
+    }
+
     public void removeUser(User user) {
-        logger.info("Remove user with username= "+ user.getUsername());
         userDAO.deleteUser(user);
     }
 
@@ -160,6 +164,10 @@ public class TenderServiceImpl implements TenderService{
 
     public void editUser(User user) {
         userDAO.updateUser(user);
+    }
+
+    public List<Participant> getParticipantsByTendersId(Integer id) {
+        return participantDAO.getParticipants(id);
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)

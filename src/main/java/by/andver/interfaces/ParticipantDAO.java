@@ -8,6 +8,6 @@ public interface ParticipantDAO {
     Participant findParticipantById(Integer id);
     void deleteParticipant(Participant participant);
     void updateParticipant (Participant participant);
-
     List findUsersBets(String userName);
+    List getParticipants(Integer id);
 }

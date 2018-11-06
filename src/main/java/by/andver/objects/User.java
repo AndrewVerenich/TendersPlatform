@@ -1,11 +1,7 @@
 package by.andver.objects;
 import by.andver.annotations.Unique;
 import by.andver.interfaces.TenderService;
-import by.andver.services.TenderServiceImpl;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -27,7 +23,7 @@ public class User {
     private String username;
     @NotNull(message = "Введите пароль")
     @Size(min = 3, message = "Пароль должен быть от 3 символов")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     @NotNull(message = "Введите название организации")
     @Size(min = 3, max = 20, message = "Название должно быть от 3 до 30 символов")

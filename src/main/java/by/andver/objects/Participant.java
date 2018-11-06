@@ -1,5 +1,7 @@
 package by.andver.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -15,6 +17,7 @@ public class Participant {
     private User user;
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     private Tender tender;
     @NotNull
     @Positive(message = "Введите числовое значение больше нуля")

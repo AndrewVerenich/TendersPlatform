@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.NoResultException;
+
 
 @Repository
 @Transactional
@@ -69,7 +71,13 @@ public class UserDAOImpl implements UserDAO {
     public User findUserByUserName(String username) {
         Query query=currentSession().createQuery(FIND_USER_BY_USERNAME);
         query.setParameter(0,username);
-        return (User) query.getSingleResult();
+        try {
+            User user=(User) query.getSingleResult();
+            return (User) query.getSingleResult();
+        }
+        catch (NoResultException e){
+            return null;
+        }
     }
 
     public boolean existsByUserName(String username) {
