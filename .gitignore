@@ -1,6 +1,6 @@
 /out
 /classes
-/target
+*/target
 /.idea
 
 *.class
@@ -14,3 +14,4 @@
 *.zip
 *.tar.gz
 *.rar
+*.lst

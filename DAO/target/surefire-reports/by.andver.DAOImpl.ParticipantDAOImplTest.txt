@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: by.andver.DAOImpl.ParticipantDAOImplTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.29 s - in by.andver.DAOImpl.ParticipantDAOImplTest

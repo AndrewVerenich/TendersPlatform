@@ -1,8 +1,0 @@
-by\andver\interfaces\ParticipantDAO.class
-by\andver\DAOImpl\TenderDAOImpl.class
-by\andver\interfaces\TenderDAO.class
-by\andver\interfaces\UserDAO.class
-by\andver\DAOImpl\ParticipantDAOImpl.class
-by\andver\DAOImpl\ProjectDAOImpl.class
-by\andver\interfaces\ProjectDAO.class
-by\andver\DAOImpl\UserDAOImpl.class
