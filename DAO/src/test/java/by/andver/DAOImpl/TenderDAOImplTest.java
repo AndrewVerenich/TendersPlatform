@@ -14,7 +14,7 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:web/WEB-INF/applicationContext.xml")
+@ContextConfiguration(locations = "classpath:applicationContextDAO.xml")
 public class TenderDAOImplTest {
     @Autowired
     private TenderDAO tenderDAO;

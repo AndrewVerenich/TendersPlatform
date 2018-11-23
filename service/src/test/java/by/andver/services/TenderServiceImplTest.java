@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:web/WEB-INF/applicationContext.xml")
+@ContextConfiguration(locations = "classpath:applicationContextService.xml")
 public class TenderServiceImplTest {
     @Autowired
     public TenderService tenderService;
@@ -193,14 +193,5 @@ public class TenderServiceImplTest {
         tenderService.removeUser(user);
         tenderService.removeUser(user1);
         tenderService.removeUser(user2);
-    }
-    @Test
-    public void insertData(){
-        tenderService.createNewUser(user);
-        tenderService.createNewUser(user1);
-        tenderService.createNewUser(user2);
-        tenderService.createNewUser(user3);
-//        Tender tender=tenderService.createNewTender(project,new Date());
-//        Tender tender1=tenderService.createNewTender(project1,new Date());
     }
 }

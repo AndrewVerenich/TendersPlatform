@@ -14,7 +14,7 @@ import java.util.Date;
 
 import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:web/WEB-INF/applicationContext.xml")
+@ContextConfiguration(locations = "classpath:applicationContextDAO.xml")
 public class ProjectDAOImplTest {
     @Autowired
     private ProjectDAO projectDAO;

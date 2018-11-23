@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 
-public class RestControllerTest {
+public class RestControllerIT {
     private static final String URI_REST_SERVICE="http://localhost:8080/rest/";
 
     @Test

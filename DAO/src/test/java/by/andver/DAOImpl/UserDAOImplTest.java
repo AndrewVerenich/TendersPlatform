@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:web/WEB-INF/applicationContext.xml")
+@ContextConfiguration(locations = "classpath:applicationContextDAO.xml")
 public class UserDAOImplTest {
     @Autowired
     private UserDAO userDAO;
@@ -25,7 +25,7 @@ public class UserDAOImplTest {
     @Before
     public void init(){
         user=new User();
-        user.setUsername("testUser");
+        user.setUsername("stranger");
         user.setPassword("test");
         user.setName("Полесьежилстрой");
         user.setAddress("г. Брест, ул. Кижеватова, д. 60");

@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:web/WEB-INF/applicationContext.xml")
+@ContextConfiguration(locations = "classpath:applicationContextDAO.xml")
 public class ParticipantDAOImplTest {
     @Autowired
     private ParticipantDAO participantDAO;
