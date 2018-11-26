@@ -49,10 +49,7 @@
                     <url>http://localhost:8080/manager/text</url>
                     <server>TomcatServer</server>
                     <path>/</path>
-                    <tomcatWebXml>WEB-INF/web.xml</tomcatWebXml>
                     <update>true</update>
-                    <username>admin</username>
-                    <password>password</password>
                 </configuration>
             </plugin>
             <plugin>
