@@ -24,7 +24,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
                 <configuration>
-                    <!--<testFailureIgnore>true</testFailureIgnore>-->
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
             <plugin>
@@ -59,25 +59,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.1.0</version>
-                <configuration>
-                    <webResources>
-                        <resources>
-                            <directory>WEB-INF/</directory>
-                            <includes>
-                                <include>*.xml</include>
-                            </includes>
-                            <targetPath>WEB-INF</targetPath>
-                        </resources>
-                        <resource>
-                            <directory>WEB-INF/views</directory>
-                            <targetPath>WEB-INF/views</targetPath>
-                        </resource>
-                        <resource>
-                            <directory>resources</directory>
-                            <targetPath>resources</targetPath>
-                        </resource>
-                    </webResources>
-                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -20,7 +20,7 @@
 
         <form-login
             login-page="/login"
-            default-target-url="/"
+            default-target-url="/src/main/webapp"
             authentication-failure-url="/login?error=true"
             username-parameter="username"
             password-parameter="password"
