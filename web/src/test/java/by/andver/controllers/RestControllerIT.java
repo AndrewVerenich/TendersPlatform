@@ -16,36 +16,11 @@ import org.apache.http.util.EntityUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 
 public class RestControllerIT {
     private static final String URI_REST_SERVICE="http://localhost:8080/rest/";
 
-    @Test
-    public void notFoundUser() throws IOException {
-        String name= "STRANGER";
-        HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
-        HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
-        Assert.assertEquals(httpResponse.getStatusLine().getStatusCode(),HttpStatus.SC_NOT_FOUND);
-    }
-    @Test
-    public void shouldGetUserByName() throws IOException {
-        String name= "user";
-        HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
-        HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
-        User user= retrieveResourceFromResponse(httpResponse, User.class);
-        Assert.assertEquals(name,user.getUsername());
-    }
-    @Test
-    public void shouldGetJSONUser() throws IOException {
-        String jsonMimeType="application/json";
-        String name= "user";
-        HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
-        HttpResponse httpResponse=HttpClientBuilder.create().build().execute(request);
-        String mimeType= ContentType.getOrDefault(httpResponse.getEntity()).getMimeType();
-        Assert.assertEquals(jsonMimeType,mimeType);
-    }
     @Test
     public void shouldPostUserFromJSON() throws IOException {
         String userName="userTEST";
@@ -60,8 +35,33 @@ public class RestControllerIT {
         HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
         User user= retrieveResourceFromResponse(httpResponse, User.class);
         Assert.assertEquals(user.getUsername(),userName);
-
     }
+
+    @Test
+    public void notFoundUser() throws IOException {
+        String name= "STRANGER";
+        HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
+        HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
+        Assert.assertEquals(httpResponse.getStatusLine().getStatusCode(),HttpStatus.SC_NOT_FOUND);
+    }
+    @Test
+    public void shouldGetUserByName() throws IOException {
+        String name= "userTEST";
+        HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
+        HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
+        User user= retrieveResourceFromResponse(httpResponse, User.class);
+        Assert.assertEquals(name,user.getUsername());
+    }
+    @Test
+    public void shouldGetJSONUser() throws IOException {
+        String jsonMimeType="application/json";
+        String name= "userTEST";
+        HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
+        HttpResponse httpResponse=HttpClientBuilder.create().build().execute(request);
+        String mimeType= ContentType.getOrDefault(httpResponse.getEntity()).getMimeType();
+        Assert.assertEquals(jsonMimeType,mimeType);
+    }
+
     private static <T> T retrieveResourceFromResponse(HttpResponse response, Class<T> clazz)
             throws IOException {
         String jsonFromResponse = EntityUtils.toString(response.getEntity());
