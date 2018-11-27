@@ -24,6 +24,10 @@ public class RestControllerIT {
     @Test
     public void shouldPostUserFromJSON() throws IOException {
         String userName="userTEST";
+        HttpUriRequest request1=new HttpGet(URI_REST_SERVICE+"users/"+userName);
+        HttpResponse httpResponse1= HttpClientBuilder.create().build().execute(request1);
+        Assert.assertEquals(httpResponse1.getStatusLine().getStatusCode(),HttpStatus.SC_NOT_FOUND);
+
         HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity postString=new StringEntity("{\"username\": \""+userName+"\", \"password\": \"44566548465132\", \"name\": \"ОАО Полесьежилстрой\", \"address\": \"г. Брест, ул. Кижеватова 60\", \"telNumber\": \"+375162572257\", \"email\": \"office@pzs.by\"}");
         HttpPost post=new HttpPost(URI_REST_SERVICE+"users");
