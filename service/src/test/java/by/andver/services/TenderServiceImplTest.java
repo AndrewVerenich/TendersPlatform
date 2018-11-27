@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:applicationContextService.xml")
+@ContextConfiguration(locations = "classpath:applicationContextTestService.xml")
 public class TenderServiceImplTest {
     @Autowired
     public TenderService tenderService;

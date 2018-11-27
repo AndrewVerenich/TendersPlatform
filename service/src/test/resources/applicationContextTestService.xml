@@ -10,11 +10,9 @@
     <context:annotation-config />
     <context:component-scan base-package="by.andver"/>
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/tenders_db_test?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useSSL=false"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.hsqldb.jdbc.JDBCDriver"/>
+        <property name="url" value="jdbc:hsqldb:mem:testDb" />
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" lazy-init="true">
@@ -24,7 +22,7 @@
     </bean>
 
     <util:properties id="hibernateProperties">
-        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+        <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
         <prop key="hibernate.show_sql">false</prop>
         <prop key="hibernate.hbm2ddl.auto">update</prop>
     </util:properties>
@@ -34,5 +32,9 @@
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <constructor-arg name="strength" value="12"/>
+    </bean>
 
 </beans>
