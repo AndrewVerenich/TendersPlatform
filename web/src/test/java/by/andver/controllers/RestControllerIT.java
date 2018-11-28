@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -19,7 +20,7 @@ import java.io.IOException;
 
 
 public class RestControllerIT {
-    private static final String URI_REST_SERVICE="http://localhost:8080/rest/";
+    private static final String URI_REST_SERVICE="http://localhost:8888/rest/";
 
     @Test
     public void shouldPostUserFromJSON() throws IOException {
@@ -39,6 +40,7 @@ public class RestControllerIT {
         HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
         User user= retrieveResourceFromResponse(httpResponse, User.class);
         Assert.assertEquals(user.getUsername(),userName);
+        HttpClientBuilder.create().build().execute(new HttpDelete(URI_REST_SERVICE+"users/"+userName));
     }
 
     @Test
@@ -51,19 +53,48 @@ public class RestControllerIT {
     @Test
     public void shouldGetUserByName() throws IOException {
         String name= "userTEST";
+
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        StringEntity postString=new StringEntity("{\"username\": \""+name+"\", \"password\": \"44566548465132\", \"name\": \"ОАО Полесьежилстрой\", \"address\": \"г. Брест, ул. Кижеватова 60\", \"telNumber\": \"+375162572257\", \"email\": \"office@pzs.by\"}");
+        HttpPost post=new HttpPost(URI_REST_SERVICE+"users");
+        post.setEntity(postString);
+        post.setHeader("Content-type", "application/json");
+        HttpResponse response=httpClient.execute(post);
+
         HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
         HttpResponse httpResponse= HttpClientBuilder.create().build().execute(request);
         User user= retrieveResourceFromResponse(httpResponse, User.class);
-        Assert.assertEquals(name,user.getUsername());
+        Assert.assertEquals(user.getUsername(),name);
+
+        HttpUriRequest request1=new HttpGet(URI_REST_SERVICE+"users/"+name);
+        HttpResponse httpResponse1= HttpClientBuilder.create().build().execute(request1);
+        User user1= retrieveResourceFromResponse(httpResponse1, User.class);
+        Assert.assertEquals(name,user1.getUsername());
+
+        HttpClientBuilder.create().build().execute(new HttpDelete(URI_REST_SERVICE+"users/"+name));
     }
     @Test
     public void shouldGetJSONUser() throws IOException {
         String jsonMimeType="application/json";
         String name= "userTEST";
+
+        HttpUriRequest request1=new HttpGet(URI_REST_SERVICE+"users/"+name);
+        HttpResponse httpResponse1= HttpClientBuilder.create().build().execute(request1);
+        Assert.assertEquals(httpResponse1.getStatusLine().getStatusCode(),HttpStatus.SC_NOT_FOUND);
+
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        StringEntity postString=new StringEntity("{\"username\": \""+name+"\", \"password\": \"44566548465132\", \"name\": \"ОАО Полесьежилстрой\", \"address\": \"г. Брест, ул. Кижеватова 60\", \"telNumber\": \"+375162572257\", \"email\": \"office@pzs.by\"}");
+        HttpPost post=new HttpPost(URI_REST_SERVICE+"users");
+        post.setEntity(postString);
+        post.setHeader("Content-type", "application/json");
+        HttpResponse response=httpClient.execute(post);
+
         HttpUriRequest request=new HttpGet(URI_REST_SERVICE+"users/"+name);
         HttpResponse httpResponse=HttpClientBuilder.create().build().execute(request);
         String mimeType= ContentType.getOrDefault(httpResponse.getEntity()).getMimeType();
         Assert.assertEquals(jsonMimeType,mimeType);
+        HttpClientBuilder.create().build().execute(new HttpDelete(URI_REST_SERVICE+"users/"+name));
+
     }
 
     private static <T> T retrieveResourceFromResponse(HttpResponse response, Class<T> clazz)
