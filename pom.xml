@@ -66,7 +66,11 @@
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <stopPort>8005</stopPort>
                     <stopKey>STOP</stopKey>
-                    <jettyXml>${project.basedir}/src/test/resources/context-jetty.xml</jettyXml>
+                    <webAppSourceDirectory>${project.basedir}/src/test/resources</webAppSourceDirectory>
+                    <webApp>
+                        <descriptor>${project.basedir}/src/test/resources/web-rest-it.xml</descriptor>
+                        <jettyEnvXml>${project.basedir}/src/test/resources/context-jetty.xml</jettyEnvXml>
+                    </webApp>
                     <httpConnector>
                         <port>8888</port>
                     </httpConnector>
@@ -80,7 +84,6 @@
                         </goals>
                         <configuration>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
-                            <!--<daemon>true</daemon>-->
                         </configuration>
                     </execution>
                     <execution>
