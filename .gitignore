@@ -3,6 +3,9 @@
 /target
 */target
 /.idea
+*/.gradle
+/.gradle
+*/build
 
 *.class
 *.log
